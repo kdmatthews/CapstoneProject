@@ -1,15 +1,16 @@
-import React from 'react'
+import React from 'react';
+import { FormDiv, Input, FormButton } from '../styled-components/LoginStyled';
 
 export default function SignUp() {
     return (
-        <div>
+        <FormDiv>
             <h1>Sign Up</h1>
-            <input type="text" placeholder="name"/>
-            <input type="text" placeholder="username"/>
-            <input type="password" placeholder="password"/>
-            <input type="password" placeholder="verify password"/>
-            <button>SignUp</button>
+            <Input type="text" placeholder="name"/>
+            <Input type="text" placeholder="username"/>
+            <Input type="password" placeholder="password"/>
+            <Input type="password" placeholder="verify password"/>
+            <FormButton>SignUp</FormButton>
             <a href="/login">Already have an account? Login</a>
-        </div>
+        </FormDiv>
     )
 }

@@ -1,13 +1,14 @@
-import React from 'react'
+import React from 'react';
+import { FormDiv, Input, FormButton } from '../styled-components/LoginStyled';
 
 export default function Login() {
     return (
-        <div>
+        <FormDiv>
             <h1>Login</h1>
-            <input type="text" placeholder="username"/>
-            <input type="password" placeholder="password"/>
-            <button>Login</button>
+            <Input type="text" placeholder="username"/>
+            <Input type="password" placeholder="password"/>
+            <FormButton>Login</FormButton>
             <a href="/signup">Create User</a>
-        </div>
+        </FormDiv>
     )
 }
