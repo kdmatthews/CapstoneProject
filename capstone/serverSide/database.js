@@ -1,5 +1,4 @@
 
-
 const express = require("express");
 const cors = require("cors");
 const app = express();
@@ -15,7 +14,7 @@ app.use(cors())
 
 app.post("/signup", (req, res) => {
     creds.connect(async() => {
-        try{
+        try {
             const data = await creds.query(`INSERT INTO users(name, username, password) VALUES ('${req.body.name}', '${req.body.username}','${req.body.password}')`)
             res.send('Created new user');
 
