@@ -8,7 +8,7 @@ export default function SignUp() {
 
 const newUser = async (e) => {
     e.preventDefault();
-   
+
 
     const signUpUser = await fetch ("https://localhost:3002/signup", {
         method: "POST",
@@ -19,7 +19,9 @@ const newUser = async (e) => {
         body: JSON.stringify({formData}),
     })
     return signUpUser;
+    
 }
+
     return (
         <FormDiv>
             <h1>Sign Up</h1>
@@ -27,8 +29,9 @@ const newUser = async (e) => {
             <Input onChange={(e)=>setFormData({...formData,[e.target.name]:e.target.value})} name="username"type="text" placeholder="username"/>
             <Input onChange={(e)=>setFormData({...formData,[e.target.name]:e.target.value})} name="password"type="password" placeholder="password"/>
             {/* <Input onChange={(e)=>setFormData({...formData,[e.target.name]:e.target.value})} name="name"type="password" placeholder="verify password"/> */}
-            <FormButton onClick={(e)=>newUser(e)}>SignUp</FormButton>
+            <FormButton onClick={(e)=>newUser(e), ()=>console.log("clicked")}>SignUp</FormButton>
             <a href="/login">Already have an account? Login</a>
         </FormDiv>
     )
+    
     }
