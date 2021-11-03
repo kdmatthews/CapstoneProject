@@ -3,6 +3,7 @@ import './App.css';
 import Login from './components/Login';
 import SignUp from './components/SignUp';
 import Navbar from './components/Navbar';
+import Home from './components/Home';
 import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 
 
@@ -11,6 +12,9 @@ function App() {
     <Router>
       <Navbar />
       <Switch>
+      <Route exact path="/">
+        <Home />
+        </Route>
         <Route path="/login">
         <Login />
         </Route>
@@ -18,8 +22,7 @@ function App() {
         <SignUp />
         </Route>
     <div className="App">
-      <h1>SOS</h1>
-     <p>Help! I need somebody! Help! Not just anybody!</p>
+    
     </div>
     </Switch>
     </Router>
