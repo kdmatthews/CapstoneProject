@@ -10,15 +10,15 @@ const newUser = async (e) => {
     e.preventDefault();
 
 
-    const signUpUser = await fetch ("https://localhost:3002/signup", {
+    const signUpUser = await fetch ("http://localhost:3000/signup", {
         method: "POST",
         mode: "cors",
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({formData}),
+        // body: JSON.stringify({formData}),
     })
-    return signUpUser;
+ 
     
 }
 
