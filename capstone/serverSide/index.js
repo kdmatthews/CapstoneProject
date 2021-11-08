@@ -41,8 +41,10 @@ app.post("/createcampaign", async (req, res) => {
 
 app.get("/read_campaigns", (req, res) => {
   creds.connect(async () => {
-    // data =  await creds.query(`SELECT * FROM campaigns`);
-    // res.send (data);
+    data = await creds.query(
+      `SELECT * FROM campaigns WHERE creator_name = ${creator_name}`
+    );
+    res.send(data);
   });
 });
 
