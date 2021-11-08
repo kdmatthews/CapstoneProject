@@ -1,9 +1,10 @@
 import React from 'react';
 import { useState } from 'react';
+import CampaignContainer from './CampaignContainer';
 
 export default function AddCampaign() {
     const [campaignData, setCampaignData] = useState({creator_name: "", title: "", image: "", goal: "", description: ""});
-    console.log(campaignData)
+    
 
     const createCampaign = async (e) => {
         e.preventDefault();
@@ -28,6 +29,8 @@ export default function AddCampaign() {
             
             <textarea onChange={(e)=>setCampaignData({...campaignData,[e.target.name]:e.target.value})} name="description" name="" id="" cols="30" rows="10" placeholder="description"></textarea>
             <button onClick={(e)=>createCampaign(e)}>Add Campaign</button>
+          
+           
         </div>
     )
 }
