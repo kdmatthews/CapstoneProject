@@ -38,7 +38,7 @@ app.get("/read_campaigns", (req,res) => {
             });
 });
 
-app.get("/read_campaigns", (req,res) => {
+app.get("/read_campaigns_by_user", (req,res) => {
   
     creds.connect(async () => {
         data =  await creds.query(`SELECT * FROM campaigns WHERE creator_name = ${creator_name}`);
