@@ -13,21 +13,25 @@ app.post("/signup", async (req, res) => {
   const salt = await bcrypt.genSalt(10);
   const hashedPassword = await bcrypt.hash(password, salt);
   creds.connect(() => {
-    console.log(name, username, password);
     const data = creds.query(
       `INSERT INTO users(name, username, password) VALUES ('${name}', '${username}','${hashedPassword}')`
     );
-    console.log(data);
     res.status(200).send("Updated users table");
   });
 });
 
-app.post("/login", async (req, res) => {
-  const userData = await creds.query(
-    `SELECT * FROM users WHERE username = ${req.body.username} && password = ${req.body.password}`
+app.post("/login", (req, res) => {
+  const userData = creds.query(
+    `SELECT * FROM users WHERE username = "${req.body.username}" && password = "${req.body.password}"`
   );
   console.log(userData);
-  //  const userPassword = userData.
+  const userValidated = bcrypt.compare(req.body.password, userData.password);
+  if (userValidated) {
+    res.send("User was validated");
+    return res.redirect("http://localhost:3000/home");
+  } else {
+    res.send("invalid user");
+  }
 });
 
 app.post("/createcampaign", async (req, res) => {
@@ -41,20 +45,18 @@ app.post("/createcampaign", async (req, res) => {
 
 app.get("/read_campaigns", (req, res) => {
   creds.connect(async () => {
-    data = await creds.query(
-      `SELECT * FROM campaigns`
-    );
+    const data = await creds.query(`SELECT * FROM campaigns`);
     res.send(data);
   });
 });
 
-
-app.get("/read_campaigns_by_user", (req,res) => {
-  
-    creds.connect(async () => {
-        data =  await creds.query(`SELECT * FROM campaigns WHERE creator_name = ${creator_name}`);
-        res.send (data);    
-            });
-});
+// app.get("/read_campaigns_by_user", (req, res) => {
+//   creds.connect(async () => {
+//     const data = await creds.query(
+//       `SELECT * FROM campaigns WHERE creator_name = ${creator_name}`
+//     );
+//     res.send(data);
+//   });
+// });
 
 app.listen(PORT, console.log(`I'm listening on ${PORT}`));
