@@ -27,7 +27,7 @@ export default function AddCampaign() {
          
             <input onChange={(e)=>setCampaignData({...campaignData,[e.target.name]:e.target.value})} name="goal" type="number" placeholder="goal" />
             
-            <textarea onChange={(e)=>setCampaignData({...campaignData,[e.target.name]:e.target.value})} name="description" name="" id="" cols="30" rows="10" placeholder="description"></textarea>
+            <textarea onChange={(e)=>setCampaignData({...campaignData,[e.target.name]:e.target.value})} name="description" id="" cols="30" rows="10" placeholder="description"></textarea>
             <button onClick={(e)=>createCampaign(e)}>Add Campaign</button>
           
            
