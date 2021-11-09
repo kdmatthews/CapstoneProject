@@ -6,6 +6,8 @@ import { useEffect, useState } from 'react';
 
 export default function CampaignContainer() {
     const [campaignInfo, setCampaignInfo] = useState([]);
+    const [ viewUpdateForm, setViewUpdateForm ] = useState(true)
+   
    
 
     useEffect(()=> {
@@ -34,7 +36,7 @@ export default function CampaignContainer() {
     return (
         <div>
           {campaignInfo?.map((campaign)=>(
-              <User campaign={campaign} />
+              <User campaign={campaign} viewUpdateForm={viewUpdateForm} setViewUpdateForm={setViewUpdateForm}/>
           ))}
         </div>
         )
