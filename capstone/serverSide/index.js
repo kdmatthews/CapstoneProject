@@ -80,7 +80,6 @@ app.post("/create_campaign", async (req, res) => {
 
 app.get("/read_campaigns", (req, res) => {
   creds.connect(async () => {
-
     const data = await creds.query(`SELECT * FROM campaigns`);
     res.send(data);
   });
@@ -99,7 +98,6 @@ app.get("/read_campaigns_by_user/:creator_name", (req, res) => {
     const decoded = jwt.verify(token, "SECRETKEY");
     console.log(decoded);
 
-
     if (decoded) {
       const name = decoded.name;
       creds.connect(async () => {
@@ -110,22 +108,26 @@ app.get("/read_campaigns_by_user/:creator_name", (req, res) => {
       });
     }
   }
-
+});
 
 app.post("/update_campaign/:id", (req, res) => {
   const id = req.params.id;
-  creds.connect(async() => {
-    const data = await creds.query(`UPDATE campaigns SET image = '${req.body.image}', title = '${req.body.title}', goal = ${req.body.goal}, description = '${req.body.description}' WHERE campaign_id = ${id}`)
-        res.send (data); 
-    })
-})
+  creds.connect(async () => {
+    const data = await creds.query(
+      `UPDATE campaigns SET image = '${req.body.image}', title = '${req.body.title}', goal = ${req.body.goal}, description = '${req.body.description}' WHERE campaign_id = ${id}`
+    );
+    res.send(data);
+  });
+});
 
-app.delete("/delete_campaign/:id", (req,res) => {
+app.delete("/delete_campaign/:id", (req, res) => {
   const id = req.params.id;
-      creds.connect(async() => {
-      const data = await creds.query(`DELETE FROM campaigns WHERE campaign_id = ${id}`);
-      res.send (data);    
-          });
+  creds.connect(async () => {
+    const data = await creds.query(
+      `DELETE FROM campaigns WHERE campaign_id = ${id}`
+    );
+    res.send(data);
+  });
 });
 
 app.listen(PORT, console.log(`I'm listening on ${PORT}`));
