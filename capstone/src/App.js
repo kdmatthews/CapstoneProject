@@ -4,6 +4,7 @@ import Login from './components/Login';
 import SignUp from './components/SignUp';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
+import UserDashboard from './components/UserDashboard';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 
@@ -20,6 +21,9 @@ function App() {
         </Route>
         <Route path="/signup">
         <SignUp />
+        </Route>
+        <Route path="/user">
+        <UserDashboard />
         </Route>
     <div className="App">
     
