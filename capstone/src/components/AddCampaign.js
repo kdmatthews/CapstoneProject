@@ -9,7 +9,7 @@ export default function AddCampaign() {
     const createCampaign = async (e) => {
         e.preventDefault();
     
-        const createCampaign = await fetch ("http://localhost:3000/createcampaign", {
+        const createCampaign = await fetch ("http://localhost:3000/create_campaign", {
             method: "POST",
             mode: "cors",
             headers: {
