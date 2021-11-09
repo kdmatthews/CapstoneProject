@@ -87,32 +87,28 @@ app.get("/read_campaigns", (req, res) => {
 
 app.get("/read_campaigns_by_user/:creator_name", (req, res) => {
   const creator_name = req.params.creator_name;
-
   const authHeader = req.headers["authorization"];
+  console.log(authHeader);
 
   if (authHeader) {
     let token = authHeader.split(" ")[1]; // creates an array with two elements
+    console.log(token);
     // verify the token
+
     const decoded = jwt.verify(token, "SECRETKEY");
+    console.log(decoded);
 
     if (decoded) {
       const name = decoded.name;
-      const persistedUser = creds.connect(async () => {
-        await creds.query(`SELECT * FROM users WHERE name = '${name}'`);
+      creds.connect(async () => {
+        const userCampaigns = await creds.query(
+          `SELECT * FROM campaigns WHERE creator_name = '${name}'`
+        );
+        res.send(userCampaigns);
       });
-      if (persistedUser) {
-        const userCampaigns = creds.connect(async () => {
-          await creds.query(
-            `SELECT * FROM campaigns WHERE creator_name = '${name}'`
-          );
-          console.log(userCampaigns);
-          // res.json(userCampaigns);
-          // res.send(userCampaigns);
-        });
-      } else {
-      }
     }
   }
+  // }
 });
 
 app.listen(PORT, console.log(`I'm listening on ${PORT}`));
