@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import CampaignContainer from './CampaignContainer';
+
 
 export default function AddCampaign() {
     const [campaignData, setCampaignData] = useState({creator_name: "", title: "", image: "", goal: "", description: ""});
@@ -16,7 +16,7 @@ export default function AddCampaign() {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(campaignData),
-        })
+        });    window.location.reload(false)
      
     } 
     return (
