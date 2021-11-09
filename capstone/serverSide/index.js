@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+const jwt = require("jsonwebtoken");
 const app = express();
 const creds = require("./creds");
 const PORT = 3000;
@@ -37,9 +38,13 @@ app.post("/login", (req, res) => {
       );
       console.log(userValidated);
       if (userValidated) {
-        res.status(200).redirect("http://localhost:3000/home");
+        //generate web token, first argument is payload (what you want to put inthe token so you can decode it later) and second is secret key
+        const token = jwt.sign({ name: name }, "SECRETKEY");
+        res.json({ success: true, token: token });
+        // res.redirect("http://localhost:3000/home");
       } else {
-        res.send("invalid user");
+        res.json({ success: false, massage: "Not authenticated" });
+        // res.send("Invalid user");
       }
       // const userData = await creds.query(
       //   `SELECT * FROM users WHERE username = '${username}' AND password = '${password}'`
@@ -64,7 +69,7 @@ app.post("/login", (req, res) => {
   // }
 });
 
-app.post("/createcampaign", async (req, res) => {
+app.post("/create_campaign", async (req, res) => {
   creds.connect(() => {
     creds.query(
       `INSERT INTO campaigns(creator_name, image, title, goal, description) VALUES ('${req.body.creator_name}', '${req.body.image}','${req.body.title}', '${req.body.goal}', '${req.body.description}')`
@@ -80,13 +85,34 @@ app.get("/read_campaigns", (req, res) => {
   });
 });
 
-// app.get("/read_campaigns_by_user", (req, res) => {
-//   creds.connect(async () => {
-//     const data = await creds.query(
-//       `SELECT * FROM campaigns WHERE creator_name = ${creator_name}`
-//     );
-//     res.send(data);
-//   });
-// });
+app.get("/read_campaigns_by_user/:creator_name", (req, res) => {
+  const creator_name = req.params.creator_name;
+
+  const authHeader = req.headers["authorization"];
+
+  if (authHeader) {
+    let token = authHeader.split(" ")[1]; // creates an array with two elements
+    // verify the token
+    const decoded = jwt.verify(token, "SECRETKEY");
+
+    if (decoded) {
+      const name = decoded.name;
+      const persistedUser = creds.connect(async () => {
+        await creds.query(`SELECT * FROM users WHERE name = '${name}'`);
+      });
+      if (persistedUser) {
+        const userCampaigns = creds.connect(async () => {
+          await creds.query(
+            `SELECT * FROM campaigns WHERE creator_name = '${name}'`
+          );
+          console.log(userCampaigns);
+          // res.json(userCampaigns);
+          // res.send(userCampaigns);
+        });
+      } else {
+      }
+    }
+  }
+});
 
 app.listen(PORT, console.log(`I'm listening on ${PORT}`));

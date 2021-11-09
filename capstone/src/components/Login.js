@@ -19,7 +19,15 @@ export default function Login() {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(formData),
-    });
+    })
+      .then((response) => response.json())
+      .then((result) => {
+        if (result.success == true) {
+          const token = result.token;
+          // put the token in local storage
+          localStorage.setItem("jsonwebtoken", token);
+        }
+      });
     // if (session) {
     //   history.push("/home");
     // } else {
