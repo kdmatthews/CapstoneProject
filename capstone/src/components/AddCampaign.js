@@ -1,10 +1,14 @@
 import React from 'react';
 import { useState } from 'react';
+
 import { NewCampaignDiv, CampaignInputs, CampaignText } from '../styled-components/AddCampaignStyled';
+
+import CampaignContainer from './CampaignContainer';
+n
 
 export default function AddCampaign() {
     const [campaignData, setCampaignData] = useState({creator_name: "", title: "", image: "", goal: "", description: ""});
-    console.log(campaignData)
+    
 
     const createCampaign = async (e) => {
         e.preventDefault();
@@ -26,9 +30,10 @@ export default function AddCampaign() {
             <CampaignInputs  onChange={(e)=>setCampaignData({...campaignData,[e.target.name]:e.target.value})} name="title"  type="text" placeholder="Title"/>
          
             <CampaignInputs  onChange={(e)=>setCampaignData({...campaignData,[e.target.name]:e.target.value})} name="goal" type="number" placeholder="goal" />
-            
+
             <CampaignText onChange={(e)=>setCampaignData({...campaignData,[e.target.name]:e.target.value})} name="description" name="" id="" cols="30" rows="10" placeholder="description"></CampaignText>
             <button onClick={(e)=>createCampaign(e)}>Add Campaign</button>
         </NewCampaignDiv>
+
     )
 }

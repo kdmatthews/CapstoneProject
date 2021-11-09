@@ -17,4 +17,6 @@ export const navbarData = [
    {name: "Sign Up", 
    path: "/signup",
    icon: <ImIcons.ImEnter/> },
+   {name: "User Dashboard",
+   path: "/user"}
 ]
