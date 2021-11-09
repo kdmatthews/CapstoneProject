@@ -10,13 +10,14 @@ export default function Login() {
   const history = useHistory();
 
   const logIn = async (e) => {
+    console.log({ formData });
     e.preventDefault();
     const loginFetch = await fetch("http://localhost:3000/login", {
       method: "POST",
       mode: "cors",
-      // headers: {
-      //   "Content-Type": "application/json",
-      // },
+      headers: {
+        "Content-Type": "application/json",
+      },
       body: JSON.stringify(formData),
     });
     // if (session) {
@@ -32,9 +33,9 @@ export default function Login() {
         onChange={(e) =>
           setFormData({ ...formData, [e.target.name]: e.target.value })
         }
-        name="username"
+        name="name"
         type="text"
-        placeholder="username"
+        placeholder="name"
       />
       <Input
         onChange={(e) =>

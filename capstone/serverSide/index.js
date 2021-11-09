@@ -10,6 +10,7 @@ app.use(cors());
 
 app.post("/signup", async (req, res) => {
   const { name, username, password } = req.body;
+
   const salt = await bcrypt.genSalt(10);
   const hashedPassword = await bcrypt.hash(password, salt);
   creds.connect(() => {
@@ -21,17 +22,46 @@ app.post("/signup", async (req, res) => {
 });
 
 app.post("/login", (req, res) => {
-  const userData = creds.query(
-    `SELECT * FROM users WHERE username = "${req.body.username}" && password = "${req.body.password}"`
-  );
-  console.log(userData);
-  const userValidated = bcrypt.compare(req.body.password, userData.password);
-  if (userValidated) {
-    res.send("User was validated");
-    return res.redirect("http://localhost:3000/home");
-  } else {
-    res.send("invalid user");
-  }
+  const { username, password, name } = req.body;
+
+  const workPlease = async () => {
+    try {
+      // you need to add a input field for the name
+      const userData = await creds.query(
+        `SELECT * FROM users WHERE name = '${name}'`
+      );
+      console.log(name, password, userData.rows[0].password);
+      const userValidated = await bcrypt.compare(
+        password,
+        userData.rows[0].password
+      );
+      console.log(userValidated);
+      if (userValidated) {
+        res.status(200).redirect("http://localhost:3000/home");
+      } else {
+        res.send("invalid user");
+      }
+      // const userData = await creds.query(
+      //   `SELECT * FROM users WHERE username = '${username}' AND password = '${password}'`
+      // );
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  creds.connect(() => {
+    workPlease();
+    // const userData = creds.query(
+    //   `SELECT * FROM users WHERE username = "${req.body.username}" && password = "${req.body.password}"`
+    // );
+    // console.log(userData);
+  });
+
+  // if (userValidated) {
+  //   res.send("User was validated");
+  //   return res.redirect("http://localhost:3000/home");
+  // } else {
+  //   res.send("invalid user");
+  // }
 });
 
 app.post("/createcampaign", async (req, res) => {
