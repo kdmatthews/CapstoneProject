@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
+import { NewCampaignDiv } from '../styled-components/AddCampaignStyled';
 
 export default function AddCampaign() {
     const [campaignData, setCampaignData] = useState({creator_name: "", title: "", image: "", goal: "", description: ""});
@@ -19,7 +20,7 @@ export default function AddCampaign() {
      
     } 
     return (
-        <div>
+        <NewCampaignDiv>
              <input onChange={(e)=>setCampaignData({...campaignData,[e.target.name]:e.target.value})} name="creator_name"   type="text" placeholder="creator_name"/>
              <input onChange={(e)=>setCampaignData({...campaignData,[e.target.name]:e.target.value})} name="image"  type="text" placeholder="image URL"/>
             <input onChange={(e)=>setCampaignData({...campaignData,[e.target.name]:e.target.value})} name="title"  type="text" placeholder="Title"/>
@@ -28,6 +29,6 @@ export default function AddCampaign() {
             
             <textarea onChange={(e)=>setCampaignData({...campaignData,[e.target.name]:e.target.value})} name="description" name="" id="" cols="30" rows="10" placeholder="description"></textarea>
             <button onClick={(e)=>createCampaign(e)}>Add Campaign</button>
-        </div>
+        </NewCampaignDiv>
     )
 }
