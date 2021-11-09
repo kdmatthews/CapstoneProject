@@ -1,9 +1,13 @@
 import React from 'react';
-import Campaigns from './Campaigns';
+
+import User from './User';
+
 import { useEffect, useState } from 'react';
 
 export default function CampaignContainer() {
     const [campaignInfo, setCampaignInfo] = useState([]);
+    const [ viewUpdateForm, setViewUpdateForm ] = useState(true)
+   
    
 
     useEffect(()=> {
@@ -23,19 +27,17 @@ export default function CampaignContainer() {
                 },
             });
             const getCampaigns = await readCampaigns.json();
-            console.log(getCampaigns)
+        
             setCampaignInfo(getCampaigns.rows)
-            console.log("use effect was fired")
-            console.log(campaignInfo)
-           
+            
           
         };
     
     return (
         <div>
           {campaignInfo?.map((campaign)=>(
-              <Campaigns campaign={campaign} />
+              <User campaign={campaign} viewUpdateForm={viewUpdateForm} setViewUpdateForm={setViewUpdateForm}/>
           ))}
         </div>
-    )
-}
+        )
+    }
