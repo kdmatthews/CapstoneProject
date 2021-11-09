@@ -24,13 +24,14 @@ export default function User(props) {
    
     return (
         <div>
-            <h1>User</h1>
+       
             <h1>{campaign?.title}</h1>
             <img src={campaign?.image} alt="" />
             <h3>${campaign?.goal}</h3>
             <p>{campaign?.description}</p>
             <p>{campaign?.campaign_id}</p>
-            <button onClick={()=>setViewUpdateForm(!viewUpdateForm)}>{viewUpdateForm ? "Update" : "Submit" }</button>
+            <p>{campaign?.creator_name}</p>
+            <button onClick={()=>setViewUpdateForm(!viewUpdateForm)}>{viewUpdateForm ? "Update" : "Cancel" }</button>
             <input type="number"  name="id" ref={delete_id}/>
             <button onClick={(e) => deleteCampaign(e)}>Delete</button>
             <UpdateForm viewUpdateForm={viewUpdateForm} />
