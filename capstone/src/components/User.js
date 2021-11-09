@@ -27,12 +27,12 @@ export default function User(props) {
        
             <h1>{campaign?.title}</h1>
             <img src={campaign?.image} alt="" />
-            <h3>${campaign?.goal}</h3>
-            <p>{campaign?.description}</p>
-            <p>{campaign?.campaign_id}</p>
-            <p>{campaign?.creator_name}</p>
+            <h3>goal: ${campaign?.goal}</h3>
+            <p>description: {campaign?.description}</p>
+            <p>id: {campaign?.campaign_id}</p>
+            <p>creator: {campaign?.creator_name}</p>
             <button onClick={()=>setViewUpdateForm(!viewUpdateForm)}>{viewUpdateForm ? "Update" : "Cancel" }</button>
-            <input type="number"  name="id" ref={delete_id}/>
+            <input type="number"  name="id" placeholder="campaign id" ref={delete_id}/>
             <button onClick={(e) => deleteCampaign(e)}>Delete</button>
             <UpdateForm viewUpdateForm={viewUpdateForm} />
 
