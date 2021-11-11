@@ -1,6 +1,8 @@
-import React from "react";
-import CampaignContainer from "./CampaignContainer";
-import UserContainer from "./UserContainer";
+
+import React from 'react';
+
+import UserContainer from './UserContainer'
+
 
 import AddCampaignUser from "./AddCampaignUser";
 

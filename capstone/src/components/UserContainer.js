@@ -2,11 +2,14 @@ import React from "react";
 
 import User from "./User";
 
-import { useEffect, useState } from "react";
+
+import { useEffect, useState } from 'react';
+
 
 export default function CampaignContainer() {
   const [campaignInfo, setCampaignInfo] = useState([]);
   const [viewUpdateForm, setViewUpdateForm] = useState(true);
+
 
   useEffect(() => {
     readCampaigns();
@@ -42,3 +45,4 @@ export default function CampaignContainer() {
     </div>
   );
 }
+

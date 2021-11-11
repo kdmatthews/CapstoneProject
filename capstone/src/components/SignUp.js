@@ -50,7 +50,6 @@ export default function SignUp() {
         type="password"
         placeholder="password"
       />
-      {/* <Input onChange={(e)=>setFormData({...formData,[e.target.name]:e.target.value})} name="name"type="password" placeholder="verify password"/> */}
       <FormButton onClick={(e) => signUp(e)}>SignUp</FormButton>
       <a href="/login">Already have an account? Login</a>
     </FormDiv>
