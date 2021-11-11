@@ -12,13 +12,13 @@ export default function Campaigns(props) {
   const updateDonations = async (e) => {
     dispatchDonation(dispatch, donationAmount)
     const id = e.target.id
-    const uppydate = await fetch(`http://localhost:3000/update_donations/:${id}`,{
+    const uppydate = await fetch(`http://localhost:3000/update_donations/${id}`,{
       method: "POST",
       mode: "cors",
       headers: {
           'Content-Type': 'application/json'
       },
-      body: JSON.stringify(money),
+      body: money,
   } 
     )
   }
