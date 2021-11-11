@@ -10,7 +10,6 @@ export default function Login() {
   const history = useHistory();
 
   const logIn = async (e) => {
-    console.log({ formData });
     e.preventDefault();
     const loginFetch = await fetch("http://localhost:3000/login", {
       method: "POST",
@@ -26,13 +25,9 @@ export default function Login() {
           const token = result.token;
           // put the token in local storage
           localStorage.setItem("jsonwebtoken", token);
+          history.push("/user");
         }
       });
-    // if (session) {
-    //   history.push("/home");
-    // } else {
-    //   alert(error);
-    // }
   };
   return (
     <FormDiv>
