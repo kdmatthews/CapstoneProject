@@ -8,19 +8,25 @@ export default function User(props) {
 
     
     const deleteCampaign = async (e) => {
-        e.preventDefault();
-        const id = delete_id.current.value;
-        console.log(id)
+     const id = e.target.id
+       
+       
     
         const deleteCampaigns = await fetch(`http://localhost:3000/delete_campaign/${id}`, {
           method: "DELETE",
           mode: "cors",
           headers: {
             "Content-Type": "application/json",
-          },         
-        }); window.location.reload(false)
-      };
-   
+          },  
+               
+        }); 
+      
+        window.location.reload(false)
+        console.log(id)
+       
+      };  
+    
+  
    
     return (
         <div>
@@ -29,12 +35,10 @@ export default function User(props) {
             <img src={campaign?.image} alt="" />
             <h3>goal: ${campaign?.goal}</h3>
             <p>description: {campaign?.description}</p>
-            <p>id: {campaign?.campaign_id}</p>
             <p>creator: {campaign?.creator_name}</p>
-            <button onClick={()=>setViewUpdateForm(!viewUpdateForm)}>{viewUpdateForm ? "Update" : "Cancel" }</button>
-            <input type="number"  name="id" placeholder="campaign id" ref={delete_id}/>
-            <button onClick={(e) => deleteCampaign(e)}>Delete</button>
-            <UpdateForm viewUpdateForm={viewUpdateForm} />
+            <button id={campaign?.campaign_id} onClick={()=>setViewUpdateForm(!viewUpdateForm)}>{viewUpdateForm ? "Update" : "Cancel" }</button>
+            <button id={campaign?.campaign_id} onClick={(e) => deleteCampaign(e)}>Delete</button>
+            <UpdateForm viewUpdateForm={viewUpdateForm} campaign={campaign}/>
 
         </div>
     )

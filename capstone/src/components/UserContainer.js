@@ -1,6 +1,7 @@
 import React from 'react';
 
 import User from './User';
+import UpdateForm from './UpdateForm';
 
 import { useEffect, useState } from 'react';
 
@@ -38,6 +39,7 @@ export default function CampaignContainer() {
           {campaignInfo?.map((campaign)=>(
               <User campaign={campaign} viewUpdateForm={viewUpdateForm} setViewUpdateForm={setViewUpdateForm}/>
           ))}
+         
         </div>
         )
     }
