@@ -1,9 +1,8 @@
 import React from 'react';
-import {useState, useEffect, useRef} from 'react';
+
 import UpdateForm from './UpdateForm';
 
 export default function User(props) {
-    const delete_id = useRef(0);
     const { campaign, viewUpdateForm, setViewUpdateForm } = props;
 
     
@@ -22,7 +21,7 @@ export default function User(props) {
         }); 
       
         window.location.reload(false)
-        console.log(id)
+       
        
       };  
     
