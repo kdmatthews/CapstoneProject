@@ -1,13 +1,14 @@
 import { DONATE_NOW } from "./actionTypes/DonationTypes";
 
 const initialState = {
+    donations: 0
 
 }
 
 const donationData = (state=initialState, action) => {
     switch(action.type){
         case DONATE_NOW:
-            return {...state, ...action.payload}
+            return {donations: action.payload}
         default:
             return state
     }
