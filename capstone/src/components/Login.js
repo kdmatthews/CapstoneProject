@@ -2,7 +2,9 @@ import { React, useState } from "react";
 import { FormDiv, Input, FormButton } from "../styled-components/LoginStyled";
 import { useHistory } from "react-router-dom";
 
-export default function Login() {
+import { connect } from "react-redux";
+
+function Login(props) {
   const [formData, setFormData] = useState({
     username: "",
     password: "",
@@ -25,6 +27,7 @@ export default function Login() {
           const token = result.token;
           // put the token in local storage
           localStorage.setItem("jsonwebtoken", token);
+          props.onLoggedIn();
           history.push("/user");
         }
       });
@@ -53,3 +56,10 @@ export default function Login() {
     </FormDiv>
   );
 }
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onLoggedIn: () => dispatch({ type: "ON_LOGGED_IN" }),
+  };
+};
+
+export default connect(null, mapDispatchToProps)(Login);
