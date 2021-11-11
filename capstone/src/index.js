@@ -1,21 +1,22 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App";
 import logger from "redux-logger";
-import { createStore, applyMiddleware } from "redux";
+import { createStore, applyMiddleware, compose } from "redux";
 import { Provider } from "react-redux";
-import { rootReducer } from './reducers/rootReducer';
+import { rootReducer } from "./reducers/rootReducer";
 
-const store = createStore(rootReducer, applyMiddleware(logger));
-
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const store = createStore(
+  rootReducer,
+  composeEnhancers(applyMiddleware(logger))
+);
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-    <App />
+      <App />
     </Provider>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
-
-

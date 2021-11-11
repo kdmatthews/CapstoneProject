@@ -1,6 +1,6 @@
 import React from "react";
 import { FormDiv, Input, FormButton } from "../styled-components/LoginStyled";
-import { useState } from "react";
+import { useState, useHistory } from "react";
 
 export default function SignUp() {
   const [formData, setFormData] = useState({
