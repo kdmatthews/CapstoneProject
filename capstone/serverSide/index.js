@@ -43,7 +43,7 @@ app.post("/login", (req, res) => {
         //generate web token, first argument is payload (what you want to put inthe token so you can decode it later) and second is secret key
         const token = jwt.sign({ name: name }, "SECRETKEY");
         res.json({ success: true, token: token });
-        res.redirect("http://localhost:3000/user");
+        // res.redirect("http://localhost:3000/user");
       } else {
         res.json({ success: false, massage: "Not authenticated" });
       }
