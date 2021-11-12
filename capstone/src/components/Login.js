@@ -1,6 +1,10 @@
 import { React, useState } from "react";
-import { FormDiv, Input, FormButton } from "../styled-components/LoginStyled";
+import { FormDiv, Input, FormButton, FormContain, SocialIcons, FormTitle } from "../styled-components/LoginStyled";
+
 import { useHistory } from "react-router-dom";
+import * as FaIcons from "react-icons/fa";
+import * as AiIcons from "react-icons/ai";
+
 
 import { connect } from "react-redux";
 
@@ -34,15 +38,20 @@ function Login(props) {
     window.location.reload(false);
   };
   return (
+    <FormContain>
     <FormDiv>
-      <h1>Login</h1>
+      <FormTitle>Login To Start a Campaign !</FormTitle>
+			<span><SocialIcons href="#" class="social"><AiIcons.AiFillFacebook /><i class="fab fa-facebook-f"></i></SocialIcons>
+				<SocialIcons href="#" class="social"><AiIcons.AiOutlineGoogle /><i class="fab fa-google-plus-g"></i></SocialIcons>
+				<SocialIcons href="#" class="social"><FaIcons.FaTwitter /><i class="fab fa-linkedin-in"></i></SocialIcons>
+        <SocialIcons href="#" class="social"><AiIcons.AiFillLinkedin/><i class="fab fa-linkedin-in"></i></SocialIcons></span>
       <Input
         onChange={(e) =>
           setFormData({ ...formData, [e.target.name]: e.target.value })
         }
         name="name"
         type="text"
-        placeholder="name"
+        placeholder="Username"
       />
       <Input
         onChange={(e) =>
@@ -50,11 +59,12 @@ function Login(props) {
         }
         name="password"
         type="password"
-        placeholder="password"
+        placeholder="Password"
       />
       <FormButton onClick={(e) => logIn(e)}>Login</FormButton>
       <a href="/signup">Create User</a>
     </FormDiv>
+    </FormContain>
   );
 }
 const mapDispatchToProps = (dispatch) => {

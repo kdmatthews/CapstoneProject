@@ -25,7 +25,12 @@ export default function SignUp() {
   return (
     <FormDiv>
       <h1>Sign Up</h1>
-
+      <div class="social-container">
+				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+			</div>
+      <span> or use your email for registration</span>
       <Input
         onChange={(e) =>
           setFormData({ ...formData, [e.target.name]: e.target.value })
