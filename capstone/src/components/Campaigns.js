@@ -7,7 +7,7 @@ export default function Campaigns(props) {
   const [donationAmount, setDonationAmount] = useState(0)
   const dispatch = useDispatch()
   const { campaign } = props;
-  const money = useSelector((state) => state.donationData.donations)
+  const money = useSelector((state) => state.donationData)
   
   const updateDonations = async (e) => {
     dispatchDonation(dispatch, donationAmount)
@@ -18,7 +18,7 @@ export default function Campaigns(props) {
       headers: {
           'Content-Type': 'application/json'
       },
-      body: JSON.stringify(money),
+      body: money,
   } 
     )
   }
