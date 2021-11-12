@@ -36,6 +36,7 @@ margin: .3rem;
 background-color: #6C8255;
 border: none;
 border-radius: 4px;
+font-size: 1.9rem;
 `
 export const SocialIcons = styled.a`
 color: #6C8255;

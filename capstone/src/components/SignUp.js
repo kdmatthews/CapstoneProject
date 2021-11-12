@@ -1,6 +1,8 @@
 import React from "react";
-import { FormDiv, Input, FormButton } from "../styled-components/LoginStyled";
+import { FormDiv, Input, FormButton, FormContain, SocialIcons, FormTitle} from "../styled-components/LoginStyled";
 import { useState, useHistory } from "react";
+import * as FaIcons from "react-icons/fa";
+import * as AiIcons from "react-icons/ai";
 
 export default function SignUp() {
   const [formData, setFormData] = useState({
@@ -23,14 +25,15 @@ export default function SignUp() {
   };
 
   return (
+    <FormContain>
     <FormDiv>
-      <h1>Sign Up</h1>
-      <div class="social-container">
-				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-			</div>
-      <span> or use your email for registration</span>
+      <FormTitle>Sign Up</FormTitle>
+      <span>
+				<SocialIcons href="#" class="social"><i class="fab fa-facebook-f"></i></SocialIcons>
+				<SocialIcons href="#" class="social"><i class="fab fa-google-plus-g"></i></SocialIcons>
+				<SocialIcons href="#" class="social"><i class="fab fa-linkedin-in"></i></SocialIcons>
+        </span>
+      
       <Input
         onChange={(e) =>
           setFormData({ ...formData, [e.target.name]: e.target.value })
@@ -58,5 +61,6 @@ export default function SignUp() {
       <FormButton onClick={(e) => signUp(e)}>SignUp</FormButton>
       <a href="/login">Already have an account? Login</a>
     </FormDiv>
+    </FormContain>
   );
 }
