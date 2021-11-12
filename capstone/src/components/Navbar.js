@@ -7,7 +7,7 @@ import { Header } from "../styled-components/NavbarStyled";
 import { connect } from "react-redux";
 
 function Navbar() {
-  const checkLogIn = useSelector((state) => state.NavBar.isLoggedIn);
+  const checkLogIn = localStorage.getItem("jsonwebtoken");
   console.log(checkLogIn);
   return (
     <Header>

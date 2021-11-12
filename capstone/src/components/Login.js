@@ -31,6 +31,7 @@ function Login(props) {
           history.push("/user");
         }
       });
+    window.location.reload(false);
   };
   return (
     <FormDiv>
