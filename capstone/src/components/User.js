@@ -25,14 +25,17 @@ export default function User(props) {
        
       };  
     
-  
+      let formatter = new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: "USD",
+    });
    
     return (
         <div>
        
             <h1>{campaign?.title}</h1>
             <img src={campaign?.image} alt="" />
-            <h3>goal: ${campaign?.goal}</h3>
+            <h3>goal: {formatter.format(campaign?.goal)}</h3>
             <p>description: {campaign?.description}</p>
             <p>creator: {campaign?.creator_name}</p>
             <button id={campaign?.campaign_id} onClick={()=>setViewUpdateForm(!viewUpdateForm)}>{viewUpdateForm ? "Update" : "Cancel" }</button>
