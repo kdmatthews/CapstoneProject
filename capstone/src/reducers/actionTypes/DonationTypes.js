@@ -1,0 +1,1 @@
+export const DONATE_NOW = "DONATE_NOW"

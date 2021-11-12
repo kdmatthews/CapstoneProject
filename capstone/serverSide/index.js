@@ -1,33 +1,59 @@
 const express = require("express");
 const cors = require("cors");
+const jwt = require("jsonwebtoken");
 const app = express();
 const creds = require("./creds");
 const PORT = 3000;
 const bcrypt = require("bcrypt");
+const authenticate = require("./middleware/authMiddleware");
 
 app.use(express.json());
 app.use(cors());
 
+app.post("/user", authenticate, (req, res) => {});
+
 app.post("/signup", async (req, res) => {
   const { name, username, password } = req.body;
+
   const salt = await bcrypt.genSalt(10);
   const hashedPassword = await bcrypt.hash(password, salt);
   creds.connect(() => {
-    console.log(name, username, password);
     const data = creds.query(
       `INSERT INTO users(name, username, password) VALUES ('${name}', '${username}','${hashedPassword}')`
     );
-    console.log(data);
     res.status(200).send("Updated users table");
   });
 });
 
-app.post("/login", async (req, res) => {
-  const userData = await creds.query(
-    `SELECT * FROM users WHERE username = ${req.body.username} && password = ${req.body.password}`
-  );
-  console.log(userData);
-  //  const userPassword = userData.
+app.post("/login", (req, res) => {
+  const { username, password, name } = req.body;
+
+  const workPlease = async () => {
+    try {
+      // you need to add a input field for the name
+      const userData = await creds.query(
+        `SELECT * FROM users WHERE name = '${name}'`
+      );
+      const userValidated = await bcrypt.compare(
+        password,
+        userData.rows[0].password
+      );
+      console.log(userValidated);
+      if (userValidated) {
+        //generate web token, first argument is payload (what you want to put inthe token so you can decode it later) and second is secret key
+        const token = jwt.sign({ name: name }, "SECRETKEY");
+        res.json({ success: true, token: token });
+        // res.redirect("http://localhost:3000/user");
+      } else {
+        res.json({ success: false, massage: "Not authenticated" });
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  creds.connect(() => {
+    workPlease();
+  });
 });
 
 app.post("/create_campaign", async (req, res) => {
@@ -41,36 +67,74 @@ app.post("/create_campaign", async (req, res) => {
 
 app.get("/read_campaigns", (req, res) => {
   creds.connect(async () => {
+    const data = await creds.query(`SELECT * FROM campaigns`);
+    res.send(data);
+  });
+});
+
+app.get("/read_campaigns_by_user/:creator_name", (req, res) => {
+  const creator_name = req.params.creator_name;
+  const authHeader = req.headers["authorization"];
+
+  if (authHeader) {
+    let token = authHeader.split(" ")[1]; // creates an array with two elements
+    // verify the token
+
+    try {
+      const decoded = jwt.verify(token, "SECRETKEY");
+      if (decoded) {
+        const name = decoded.name;
+        creds.connect(async () => {
+          const userCampaigns = await creds.query(
+            `SELECT * FROM campaigns WHERE creator_name = '${name}'`
+          );
+          res.json(userCampaigns);
+        });
+      } else {
+        //user does not exist
+        res.json({ success: false, message: "User does not exist!" });
+      }
+    } catch (error) {
+      res
+        .status(401)
+        .json({ success: false, message: "Token has been tampered with!" });
+    }
+  } else {
+    // no authentication headers
+    res
+      .status(401)
+      .json({ success: false, message: "No authentication headers found!" });
+  }
+});
+
+app.post("/update_campaign/:id", (req, res) => {
+  const id = req.params.id;
+  creds.connect(async () => {
     const data = await creds.query(
-      `SELECT * FROM campaigns`
+      `UPDATE campaigns SET image = '${req.body.image}', title = '${req.body.title}', goal = ${req.body.goal}, description = '${req.body.description}' WHERE campaign_id = ${id}`
     );
     res.send(data);
   });
 });
 
-
-// app.get("/read_campaigns_by_user", (req,res) => {
-  
-//     creds.connect(async () => {
-//         const data =  await creds.query(`SELECT * FROM campaigns WHERE creator_name = ${creator_name}`);
-//         res.send (data);    
-//             });
-// });
-
-app.post("/update_campaign/:id", (req, res) => {
+app.delete("/delete_campaign/:id", (req, res) => {
   const id = req.params.id;
-  creds.connect(async() => {
-    const data = await creds.query(`UPDATE campaigns SET image = '${req.body.image}', title = '${req.body.title}', goal = ${req.body.goal}, description = '${req.body.description}' WHERE campaign_id = ${id}`)
-        res.send (data); 
-    })
-})
-
-app.delete("/delete_campaign/:id", (req,res) => {
+  creds.connect(async () => {
+    const data = await creds.query(
+      `DELETE FROM campaigns WHERE campaign_id = ${id}`
+    );
+    res.send(data);
+  });
+});
+// donations route
+app.post("/update_donations/:id", (req, res) => {
   const id = req.params.id;
-      creds.connect(async() => {
-      const data = await creds.query(`DELETE FROM campaigns WHERE campaign_id = ${id}`);
-      res.send (data);    
-          });
+  creds.connect(async () => {
+    const data = await creds.query(
+      `UPDATE campaigns SET donations = (donations + ${req.body.donations}) WHERE campaign_id = ${id}`
+    );
+    res.send(data);
+  });
 });
 
 app.listen(PORT, console.log(`I'm listening on ${PORT}`));

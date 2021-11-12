@@ -10,7 +10,7 @@ export default function CampaignContainer() {
        
   
             readCampaigns();
-            // return () => {};
+          
            
         }, []);
        
@@ -27,6 +27,7 @@ export default function CampaignContainer() {
             setCampaignInfo(getCampaigns.rows)
             console.log("use effect was fired")
             console.log(campaignInfo)
+           
           
         };
     

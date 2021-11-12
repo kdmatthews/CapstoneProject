@@ -1,64 +1,46 @@
 import React from 'react';
-import {useState, useEffect, useRef} from 'react';
+
+import UpdateForm from './UpdateForm';
 
 export default function User(props) {
-    const delete_id = useRef(0);
-    const { campaign } = props;
-    const [campaignId, setCampaignId] = useState(0);
-   
+    const { campaign, viewUpdateForm, setViewUpdateForm } = props;
+
+    
     const deleteCampaign = async (e) => {
-        e.preventDefault();
-        const id = delete_id.current.value;
-        console.log(id)
+     const id = e.target.id
+       
+       
     
         const deleteCampaigns = await fetch(`http://localhost:3000/delete_campaign/${id}`, {
           method: "DELETE",
           mode: "cors",
           headers: {
             "Content-Type": "application/json",
-          },         
-        }); window.location.reload(false)
-      };
-   
-    // USEEFFECT
-    // useEffect(()=> {
-    //         deleteCampaign();  
-    //     }, []);
+          },  
+               
+        }); 
+      
+        window.location.reload(false)
        
-    //     const deleteCampaign = async () => {
-          
-           
-    //         const deleteCampaign1 = await fetch (`http://delete_campaign/id`, {
-    //             method: "DELETE",
-    //             mode: "cors",
-    //             headers: {
-    //                 'Content-Type': 'application/json'
-    //             },
-    //         });
-    //         const getCampaigns = await deleteCampaign.json();
-    //         const id = setCampaignId(getCampaigns.rows.id);
-    //         console.log("use effect was fired")
-    //         console.log(campaignId)
-          
-    //     };
-
-    // NOT USE EFFECT
-   
-      const reload = ()=> {
-
-      }
+       
+      };  
+    
+      let formatter = new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: "USD",
+    });
    
     return (
         <div>
-            <h1>User</h1>
+       
             <h1>{campaign?.title}</h1>
             <img src={campaign?.image} alt="" />
-            <h3>${campaign?.goal}</h3>
-            <p>{campaign?.description}</p>
-            <p>{campaign?.campaign_id}</p>
-            <button>Update</button>
-            <input type="number"  name="id" ref={delete_id}/>
-            <button onClick={(e) => deleteCampaign(e)}>Delete</button>
+            <h3>goal: {formatter.format(campaign?.goal)}</h3>
+            <p>description: {campaign?.description}</p>
+            <p>creator: {campaign?.creator_name}</p>
+            <button id={campaign?.campaign_id} onClick={()=>setViewUpdateForm(!viewUpdateForm)}>{viewUpdateForm ? "Update" : "Cancel" }</button>
+            <button id={campaign?.campaign_id} onClick={(e) => deleteCampaign(e)}>Delete</button>
+            <UpdateForm viewUpdateForm={viewUpdateForm} campaign={campaign}/>
 
         </div>
     )
