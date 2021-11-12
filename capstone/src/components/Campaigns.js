@@ -22,13 +22,17 @@ export default function Campaigns(props) {
   } 
     )
   }
+  let formatter = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: "USD",
+});
   return (
     <div>
       <h1>{campaign?.title}</h1>
       <img src={campaign?.image} alt="" />
-      <h3>{campaign?.goal}</h3>
+      <h3>{formatter.format(campaign?.goal)}</h3>
       <p>{campaign?.description}</p>
-      <p>{campaign?.donations}</p>
+      <p>{formatter.format(campaign?.donations)}</p>
       <input type="text" placeholder="Donation Amount" id="donationAmount" onChange={(e) => setDonationAmount(e.target.value)}></input>
       <button id={campaign?.campaign_id} onClick={(e) => updateDonations(e)}>Donate Now!</button>
     </div>
