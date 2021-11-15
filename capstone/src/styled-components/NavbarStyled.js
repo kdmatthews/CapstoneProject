@@ -9,6 +9,8 @@ export const Header = styled.div`
     top: 0;
     z-index: 2;
     overflow: visible;
+    border-top:double whitesmoke;
+    border-bottom: double whitesmoke;
 `
 export const NavbarIcons = styled(Link)`
 justify-content: space-between;
