@@ -11,7 +11,6 @@ export default function UserDashboard() {
       <h1>User Dashboard</h1>
       <AddCampaignUser />
       <UserContainer />
-      <Chart />
     </div>
   );
 }
