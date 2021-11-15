@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { navbarData, navbarUser } from "./NavbarData";
 import NavbarLinks from "./NavbarLinks";
 import { Header } from "../styled-components/NavbarStyled";
-
+import "../../public/assests"
 import { connect } from "react-redux";
 
 function Navbar() {
@@ -14,6 +14,9 @@ function Navbar() {
       {checkLogIn
         ? navbarUser?.map((linkData) => <NavbarLinks linkData={linkData} />)
         : navbarData?.map((linkData) => <NavbarLinks linkData={linkData} />)}
+        <video width="320" height="240" autoplay>
+        <source src =""></source>
+        </video>
     </Header>
   );
 }

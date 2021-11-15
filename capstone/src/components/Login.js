@@ -1,5 +1,5 @@
 import { React, useState } from "react";
-import { FormDiv, Input, FormButton, FormContain, SocialIcons, FormTitle } from "../styled-components/LoginStyled";
+import { FormDiv, Input, FormButton, FormContain, SocialIcons, FormTitle, HrefTag } from "../styled-components/LoginStyled";
 
 import { useHistory } from "react-router-dom";
 import * as FaIcons from "react-icons/fa";
@@ -62,7 +62,7 @@ function Login(props) {
         placeholder="Password"
       />
       <FormButton onClick={(e) => logIn(e)}>Login</FormButton>
-      <a href="/signup">Create User</a>
+      <HrefTag href="/signup">Create User</HrefTag>
     </FormDiv>
     </FormContain>
   );

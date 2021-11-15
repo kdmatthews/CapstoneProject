@@ -16,3 +16,7 @@ height: 80px;
 
 color: #FFA303;
 `
+const HrefTag = styled.a`
+font-size: 2rem;
+color: #6C8255;
+`

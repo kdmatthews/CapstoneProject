@@ -6,7 +6,6 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 margin: 10rem;
-
 `
 
 export const FormDiv = styled.div`
@@ -48,4 +47,8 @@ export const FormTitle = styled.h1`
 color: whitesmoke;
 
 
+`
+export const HrefTag = styled.a`
+font-size: 2rem;
+color: #6C8255;
 `
