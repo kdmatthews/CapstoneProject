@@ -1,6 +1,7 @@
 import React from "react";
 import Plot from "react-plotly.js";
 import { useSelector } from "react-redux";
+import { ChartContainer } from "../styled-components/ChartStyled";
 
 export default function Chart(props) {
   const donations = props.campaign?.donations;
@@ -12,12 +13,11 @@ export default function Chart(props) {
       value: donations,
       title: { text: "Campaign Progress" },
       type: "indicator",
-      mode: "number+gauge+delta",
+      mode: "gauge+number",
       delta: {
         reference: goal,
       },
       gauge: {
-        shape: "bullet",
         axis: {
           range: [0, goal],
         },
@@ -25,11 +25,13 @@ export default function Chart(props) {
     },
   ];
 
-  const layout = { width: 600, height: 500, margin: { t: 0, b: 0 } };
+  const layout = { width: 600, height: 400, margin: { t: 0, b: 0 } };
 
   return (
     <div>
-      <Plot data={data} layout={layout} />
+      <ChartContainer>
+        <Plot data={data} layout={layout} />
+      </ChartContainer>
     </div>
   );
 }
