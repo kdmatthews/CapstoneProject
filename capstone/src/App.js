@@ -4,6 +4,7 @@ import Login from './components/Login';
 import SignUp from './components/SignUp';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
+import Footer from './components/Footer';
 import UserDashboard from './components/UserDashboard';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -26,9 +27,10 @@ function App() {
         <UserDashboard />
         </Route>
     <div className="App">
-    
+     
     </div>
     </Switch>
+    <Footer />
     </Router>
   );
 }
