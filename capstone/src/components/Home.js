@@ -18,7 +18,7 @@ export default function Home() {
          <FadeIn>   
         <Confetti/>
         </FadeIn>
-        <div></div>
+        
        <TitleDiv>
        <Logo_Img src= {logo} alt = "sos logo"/>
        

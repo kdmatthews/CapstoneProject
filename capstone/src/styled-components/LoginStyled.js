@@ -1,4 +1,5 @@
-import styled from "styled-components";
+import { bounceInDown } from "react-animations";
+import styled, {keyframes} from "styled-components";
 
 export const FormContain = styled.div`
 display:flex;
@@ -7,8 +8,9 @@ justify-content: center;
 align-items: center;
 margin: 10rem;
 `
-
+const FormBounce = keyframes `${bounceInDown}`
 export const FormDiv = styled.div`
+animation: 2s ${FormBounce};
 display: flex;
 flex-direction: column;
 justify-content: center;
@@ -33,6 +35,7 @@ width: 30%;
 height: 45px;
 margin: .3rem;
 background-color: #6C8255;
+color: whitesmoke;
 border: none;
 border-radius: 4px;
 font-size: 1.9rem;
@@ -50,5 +53,5 @@ color: whitesmoke;
 `
 export const HrefTag = styled.a`
 font-size: 2rem;
-color: #6C8255;
+color: whitesmoke;
 `

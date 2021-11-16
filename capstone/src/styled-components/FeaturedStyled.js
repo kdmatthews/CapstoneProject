@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'styled-components';
-import {bounce} from 'react-animations'
+import {bounce, fadeInLeft, lightSpeedIn} from 'react-animations'
 
 
 export const FeaturedContain = styled.div`
@@ -12,20 +12,20 @@ border-radius:10px;
 /* border: solid black; */
 
 `
-const bounceAnimation = keyframes`${bounce}`
+const Animation = keyframes`${fadeInLeft}`
 export const FeaturedInfoContain = styled.div`
-animation: 2s ${bounceAnimation};
+animation: 2s ${Animation};
 display: flex;
 flex-direction: column;
 align-items: center;
-border: double #6C8255;
+/* border: double #6C8255; */
 height:30rem;
 border-radius:10px;
-background-color: #FFA303;
+background-color: #FFE0AE;
 
 `
 export const FeaturedConImg = styled.img`
-height: 20rem;
-width: 20rem;
+height: 17rem;
+width: 36rem;
 border-radius: 5px;
 `
