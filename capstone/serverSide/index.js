@@ -129,10 +129,13 @@ app.delete("/delete_campaign/:id", (req, res) => {
 // donations route
 app.post("/update_donations/:id", (req, res) => {
   const id = req.params.id;
+
+  console.log(id)
   creds.connect(async () => {
     const data = await creds.query(
       `UPDATE campaigns SET donations = (donations + ${req.body.donations}) WHERE campaign_id = ${id}`
-    );
+    ); 
+    console.log(data)
     res.send(data);
   });
 });
