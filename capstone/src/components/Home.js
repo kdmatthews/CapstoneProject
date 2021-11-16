@@ -1,6 +1,11 @@
 import React from 'react';
 import FeaturedContainer from './FeaturedContainer';
 import CampaignContainer from './CampaignContainer';
+import { HomeDiv, TitleDiv, Logo_Img,  } from '../styled-components/HomeStyled';
+import logo from '.././assests/logo.png'
+import Confetti from 'react-confetti';
+import FadeIn from 'react-fade-in'
+
 
 
 
@@ -9,12 +14,18 @@ export default function Home() {
    
   
     return (
-        <div>
-        <h1>SOS</h1>
-        <p>Help! I need somebody! Help! Not just anybody!</p>
+        <HomeDiv>
+         <FadeIn>   
+        <Confetti/>
+        </FadeIn>
+        
+       <TitleDiv>
+       <Logo_Img src= {logo} alt = "sos logo"/>
+       
+       </TitleDiv>
        
         <FeaturedContainer />
         <CampaignContainer />
-        </div>
+        </HomeDiv>
     )
 }

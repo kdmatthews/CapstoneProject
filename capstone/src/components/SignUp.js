@@ -1,6 +1,8 @@
 import React from "react";
-import { FormDiv, Input, FormButton } from "../styled-components/LoginStyled";
+import { FormDiv, Input, FormButton, FormContain, SocialIcons, FormTitle, HrefTag} from "../styled-components/LoginStyled";
 import { useState, useHistory } from "react";
+import * as FaIcons from "react-icons/fa";
+import * as AiIcons from "react-icons/ai";
 
 export default function SignUp() {
   const [formData, setFormData] = useState({
@@ -23,9 +25,14 @@ export default function SignUp() {
   };
 
   return (
+    <FormContain>
     <FormDiv>
-      <h1>Sign Up</h1>
-
+      <FormTitle>Sign Up</FormTitle>
+      <span><SocialIcons href="#" class="social"><AiIcons.AiFillFacebook /><i class="fab fa-facebook-f"></i></SocialIcons>
+				<SocialIcons href="#" class="social"><AiIcons.AiOutlineGoogle /><i class="fab fa-google-plus-g"></i></SocialIcons>
+				<SocialIcons href="#" class="social"><FaIcons.FaTwitter /><i class="fab fa-linkedin-in"></i></SocialIcons>
+        <SocialIcons href="#" class="social"><AiIcons.AiFillLinkedin/><i class="fab fa-linkedin-in"></i></SocialIcons></span>
+      
       <Input
         onChange={(e) =>
           setFormData({ ...formData, [e.target.name]: e.target.value })
@@ -51,7 +58,8 @@ export default function SignUp() {
         placeholder="password"
       />
       <FormButton onClick={(e) => signUp(e)}>SignUp</FormButton>
-      <a href="/login">Already have an account? Login</a>
+      <HrefTag href="/login">Already have an account? Login</HrefTag>
     </FormDiv>
+    </FormContain>
   );
 }

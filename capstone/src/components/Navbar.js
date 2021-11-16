@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { navbarData, navbarUser } from "./NavbarData";
 import NavbarLinks from "./NavbarLinks";
 import { Header } from "../styled-components/NavbarStyled";
-
+// import  from "../../public"
 import { connect } from "react-redux";
 
 function Navbar() {
