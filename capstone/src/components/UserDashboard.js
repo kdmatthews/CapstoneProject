@@ -1,10 +1,9 @@
+import React from "react";
 
-import React from 'react';
-
-import UserContainer from './UserContainer'
-
+import UserContainer from "./UserContainer";
 
 import AddCampaignUser from "./AddCampaignUser";
+import Chart from "./Chart";
 
 export default function UserDashboard() {
   return (
