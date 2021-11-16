@@ -12,7 +12,7 @@ export default function FeaturedInfo(props) {
 
 
             <h2>{item?.Goal}</h2>
-            <h3>Description: {item?.Description}</h3>
+            <p>Description: {item?.Description}</p>
 
             <h3>Organizer: {item?.Organizer}</h3>
         </FeaturedInfoContain>

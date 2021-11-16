@@ -3,9 +3,10 @@ import { Link } from 'react-router-dom'
 
 export const Header = styled.div`
     display: flex;
+    justify-content: space-evenly;
     width: 100%;
     height: 70px;
-    background-color: #6C8255;
+    background-color:  #FFE0AE;
     position: fixed;
     top: 0;
     z-index: 2;
@@ -19,7 +20,7 @@ justify-content: center;
 font-size: 2rem;
 height: 80px;
 
-color: #FFA303;
+color: #6C8255;
 `
 const HrefTag = styled.a`
 font-size: 2rem;
