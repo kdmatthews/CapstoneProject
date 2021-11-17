@@ -71,7 +71,7 @@ export default function SignUp() {
         placeholder="password"
       />
     <FormButton onClick={(e) => signUp(e)}>SignUp</FormButton>
-    <HrefTag href="/login" onClick={(e) => signUp(e)}>Sign Up</HrefTag>
+   
       <HrefTag href="/login">Already have an account? Login</HrefTag>
     </FormDiv>
     </FormContain>
