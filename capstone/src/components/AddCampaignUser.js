@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { NewCampaignForm, CampaignInputs, CampaignText, NewCamDiv, AddCamButton } from "../styled-components/AddCampaignStyled";
+import { NewCampaignForm, CampaignInputs, CampaignText, NewCamDiv, AddCamButton, formHeader } from "../styled-components/AddCampaignStyled";
 
 export default function AddCampaign() {
   const [campaignData, setCampaignData] = useState({

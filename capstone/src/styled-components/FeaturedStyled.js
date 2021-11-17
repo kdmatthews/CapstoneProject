@@ -10,7 +10,7 @@ align-items: center;
 justify-content: space-evenly;
 margin-top: 2rem ;
 border-radius:10px;
-background-color: #6C8255;
+/* background-color: #6C8255; */
 /* width: 100rem; */
 /* border: solid black; */
 
@@ -23,15 +23,15 @@ flex-direction: column;
 align-items: center;
 justify-content: center;
 /* border: double #6C8255; */
-height:30rem;
-width: 35rem;
+height:35rem;
+width: 40rem;
 border-radius:10px;
 /* border: double #FFE0AE; */
 /* background-color: #FFE0AE; */
 
 `
 export const FeaturedConImg = styled.img`
-height: 10rem;
-width: 16rem;
+height: 16rem;
+width: 22rem;
 border-radius: 10px;
 `

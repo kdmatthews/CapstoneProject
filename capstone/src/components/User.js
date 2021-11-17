@@ -1,5 +1,5 @@
 import React from 'react';
-import { UserCamDiv, UserCampaignImg } from '../styled-components/UserStyled';
+import { UserCamDiv, UserCampaignImg, Up_DelButton } from '../styled-components/UserStyled';
 import UpdateForm from './UpdateForm';
 
 export default function User(props) {
@@ -38,8 +38,8 @@ export default function User(props) {
             <h3>goal: {formatter.format(campaign?.goal)}</h3>
             <p>description: {campaign?.description}</p>
             <p>creator: {campaign?.creator_name}</p>
-            <button id={campaign?.campaign_id} onClick={()=>setViewUpdateForm(!viewUpdateForm)}>{viewUpdateForm ? "Update" : "Cancel" }</button>
-            <button id={campaign?.campaign_id} onClick={(e) => deleteCampaign(e)}>Delete</button>
+            <Up_DelButton id={campaign?.campaign_id} onClick={()=>setViewUpdateForm(!viewUpdateForm)}>{viewUpdateForm ? "Update" : "Cancel" }</Up_DelButton>
+            <Up_DelButton id={campaign?.campaign_id} onClick={(e) => deleteCampaign(e)}>Delete</Up_DelButton>
             <UpdateForm viewUpdateForm={viewUpdateForm} campaign={campaign}/>
 
         </UserCamDiv>

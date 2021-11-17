@@ -14,3 +14,12 @@ height:20rem;
 width: 30rem;
 border-radius: 10px;
 `
+
+const buttonAnimation = keyframes `${bounceInDown}`
+export const Up_DelButton = styled.button`
+animation:2s ${buttonAnimation};
+height: 2rem;
+width: 8rem;
+color: whitesmoke;
+background-color: #6C8255 ;
+`

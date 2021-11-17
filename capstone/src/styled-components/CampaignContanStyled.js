@@ -30,7 +30,7 @@ width: 20rem;
 `
 const buttonAnimation = keyframes `${bounceInRight}`
 export const DonateButton = styled.button`
-animation: 10s ${buttonAnimation};
+animation: 2s ${buttonAnimation};
 width: 10rem;
 color: whitesmoke;
 background-color: #6C8255;
