@@ -5,6 +5,7 @@ import { CampCon } from "../styled-components/CampaignContanStyled"
 
 export default function CampaignContainer() {
   const [campaignInfo, setCampaignInfo] = useState([]);
+  
 
   useEffect(() => {
     readCampaigns();
@@ -22,8 +23,10 @@ export default function CampaignContainer() {
     setCampaignInfo(getCampaigns.rows);
   };
 
+
   return (
     <CampCon>
+     
       {campaignInfo?.map((campaign) => (
         <Campaigns campaign={campaign} />
       ))}
