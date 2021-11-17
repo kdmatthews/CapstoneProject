@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { UserCamDiv, UserCampaignImg } from '../styled-components/UserStyled';
 import UpdateForm from './UpdateForm';
 
 export default function User(props) {
@@ -31,10 +31,10 @@ export default function User(props) {
     });
    
     return (
-        <div>
+        <UserCamDiv>
        
             <h1>{campaign?.title}</h1>
-            <img src={campaign?.image} alt="" />
+            <UserCampaignImg src={campaign?.image} alt="" />
             <h3>goal: {formatter.format(campaign?.goal)}</h3>
             <p>description: {campaign?.description}</p>
             <p>creator: {campaign?.creator_name}</p>
@@ -42,6 +42,6 @@ export default function User(props) {
             <button id={campaign?.campaign_id} onClick={(e) => deleteCampaign(e)}>Delete</button>
             <UpdateForm viewUpdateForm={viewUpdateForm} campaign={campaign}/>
 
-        </div>
+        </UserCamDiv>
     )
 }

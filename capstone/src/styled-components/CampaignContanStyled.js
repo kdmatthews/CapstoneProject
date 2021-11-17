@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'styled-components';
-import {  lightSpeedIn, flash } from 'react-animations';
+import {  lightSpeedIn, bounceInRight} from 'react-animations';
 
 export const CampCon = styled.div`
 display: grid;
@@ -28,8 +28,9 @@ margin:2;
 height:25rem;
 width: 20rem;
 `
-
+const buttonAnimation = keyframes `${bounceInRight}`
 export const DonateButton = styled.button`
+animation: 10s ${buttonAnimation};
 width: 10rem;
 color: whitesmoke;
 background-color: #6C8255;

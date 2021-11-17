@@ -1,7 +1,7 @@
 import React from "react";
 
 import User from "./User";
-
+import {ChartDiv} from '../styled-components/AddCampaignStyled'
 import { useEffect, useState } from "react";
 import Chart from "./Chart";
 
@@ -32,7 +32,7 @@ export default function CampaignContainer() {
   };
 
   return (
-    <div>
+    <ChartDiv>
       {campaignInfo?.map((campaign) => (
         <User
           campaign={campaign}
@@ -43,6 +43,6 @@ export default function CampaignContainer() {
       {campaignInfo.map((campaign) => (
         <Chart campaign={campaign} />
       ))}
-    </div>
+    </ChartDiv>
   );
 }

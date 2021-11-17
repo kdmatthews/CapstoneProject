@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import { NewCampaignForm, CampaignInputs, CampaignText, NewCamDiv, AddCamButton } from "../styled-components/AddCampaignStyled";
 
 export default function AddCampaign() {
   const [campaignData, setCampaignData] = useState({
@@ -27,9 +28,10 @@ export default function AddCampaign() {
     window.location.reload(false);
   };
   return (
-    <div>
-      <form action="">
-        <input
+    <NewCamDiv>
+      <NewCampaignForm  action="">
+        <h2>Start A New Campaign Here!</h2>
+        <CampaignInputs
           onChange={(e) =>
             setCampaignData({
               ...campaignData,
@@ -40,7 +42,7 @@ export default function AddCampaign() {
           type="text"
           placeholder="creator_name"
         />
-        <input
+        <CampaignInputs
           onChange={(e) =>
             setCampaignData({
               ...campaignData,
@@ -51,7 +53,7 @@ export default function AddCampaign() {
           type="text"
           placeholder="image URL"
         />
-        <input
+        <CampaignInputs
           onChange={(e) =>
             setCampaignData({
               ...campaignData,
@@ -63,7 +65,7 @@ export default function AddCampaign() {
           placeholder="Title"
         />
 
-        <input
+        <CampaignInputs
           onChange={(e) =>
             setCampaignData({
               ...campaignData,
@@ -75,7 +77,7 @@ export default function AddCampaign() {
           placeholder="goal"
         />
 
-        <textarea
+        <CampaignText
           onChange={(e) =>
             setCampaignData({
               ...campaignData,
@@ -87,9 +89,9 @@ export default function AddCampaign() {
           cols="30"
           rows="10"
           placeholder="description"
-        ></textarea>
-        <button onClick={(e) => createCampaign(e)}>Add Campaign</button>
-      </form>
-    </div>
+        ></CampaignText>
+        <AddCamButton onClick={(e) => createCampaign(e)}>Add Campaign</AddCamButton>
+      </NewCampaignForm >
+    </NewCamDiv>
   );
 }
