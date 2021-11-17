@@ -24,7 +24,7 @@ border-radius: 6px;
 `
 export const CampaignText = styled.textarea`
 position:static;
-width: 60vw;
+width: 20vw;
 
 
 `
@@ -47,6 +47,7 @@ width: 8rem;
 color: whitesmoke;
 background-color: #6C8255 ;
 `
-export const formHeader = styled.h2`
+export const formHeader = styled.style`
 color: whitesmoke;
+font-size: large;
 `
