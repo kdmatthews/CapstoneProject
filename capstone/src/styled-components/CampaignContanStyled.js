@@ -6,7 +6,7 @@ display: grid;
 grid-template-columns: repeat(3, 1fr);
 gap: 8rem;
 margin: 10rem;
-background-color:#FF4500;
+background-image: linear-gradient(to right,  #FFA303 ,#FF4500 );
 padding: 10rem;
 border-radius: 10cm;
 `

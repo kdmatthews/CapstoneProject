@@ -24,7 +24,7 @@ align-items: center;
 justify-content: center;
 /* border: double #6C8255; */
 height:30rem;
-width: 20rem;
+width: 35rem;
 border-radius:10px;
 /* border: double #FFE0AE; */
 /* background-color: #FFE0AE; */

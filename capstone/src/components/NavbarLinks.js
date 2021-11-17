@@ -1,16 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { NavbarIcons, LinkDataDiv } from "../styled-components/NavbarStyled";
+import { NavbarIcons } from "../styled-components/NavbarStyled";
 
 export default function NavbarLinks(props) {
   return (
     <>
-    <LinkDataDiv>
+    <div>
       <NavbarIcons to={props.linkData.path}>
         {props.linkData.icon}{" "}{props.linkData.name}{" "}
       </NavbarIcons>
 
-      </LinkDataDiv>
+      </div>
     </>
   );
 }
