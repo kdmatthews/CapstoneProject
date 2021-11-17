@@ -1,6 +1,7 @@
 import React from "react";
 import Campaigns from "./Campaigns";
 import { useEffect, useState } from "react";
+import { CampCon } from "../styled-components/CampaignContanStyled"
 
 export default function CampaignContainer() {
   const [campaignInfo, setCampaignInfo] = useState([]);
@@ -22,10 +23,10 @@ export default function CampaignContainer() {
   };
 
   return (
-    <div>
+    <CampCon>
       {campaignInfo?.map((campaign) => (
         <Campaigns campaign={campaign} />
       ))}
-    </div>
+    </CampCon>
   );
 }

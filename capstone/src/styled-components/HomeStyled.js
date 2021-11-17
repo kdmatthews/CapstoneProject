@@ -1,6 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 import { Link } from "react-router-dom";
-import { lightSpeedIn } from 'react-animations';
+import { flash } from 'react-animations';
 
 export const HomeDiv = styled.div`
 display: flex;
@@ -8,15 +8,17 @@ flex-direction: column;
 justify-content: center;
 align-items:center;
 margin: 3px;
+
 `
 
-const speedAnimation = keyframes `${lightSpeedIn}`
+const fadeAnimation = keyframes `${flash}`
 export const TitleDiv =styled.div`
-animation: 2s ${speedAnimation};
+animation: 2s ${fadeAnimation};
 display: flex;
-flex-direction: column;
+flex-direction: row;
 justify-content: center;
 color: #FF4500 ;
+gap:1rem;
 margin-top:5rem;
 `
 export const Logo_Img = styled.img`
@@ -25,7 +27,7 @@ width: 20rem;
 border-radius: 5px;
  `
 
- const speedIn = keyframes `${lightSpeedIn}`
+ 
  
 
 

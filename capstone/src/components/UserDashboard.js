@@ -12,5 +12,5 @@ export default function UserDashboard() {
       <AddCampaignUser />
       <UserContainer />
     </div>
-  );
+  )
 }
