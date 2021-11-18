@@ -2,9 +2,9 @@
 
 This is a React app and was built with npx create-react-app
 
-## To run this project on local host you'll to npm i:
+## To run this project on local host you'll need to npm i:
 -bcrypt
---cors
+-cors
 -dotenv
 -express
 -jsonwebtoken
@@ -26,7 +26,7 @@ This is a React app and was built with npx create-react-app
 -redux-logger
 -styled-components
 
-## Starting the app on localhost
+## Starting the app
 
 After you've cloned this repo onto your computer: 
 
@@ -70,6 +70,11 @@ If you don't remember the credentials you made seconds ago, rinse and repeat the
 
 Click Login and you'll be redirected to your new user dashboard. 
 
+## User Dashboard
+
+Here is where you can add a campaign, and see your progress on the campaign. 
+
+![User Dashboard](/readMeAssets/userDB.png)
 
 
 

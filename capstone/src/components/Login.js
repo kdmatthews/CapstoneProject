@@ -50,7 +50,7 @@ function Login(props) {
         }
         name="name"
         type="text"
-        placeholder="Username"
+        placeholder="Name"
       />
       <Input
         onChange={(e) =>

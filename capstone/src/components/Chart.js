@@ -28,10 +28,9 @@ export default function Chart(props) {
   const layout = { width: 600, height: 400, margin: { t: 0, b: 0 } };
 
   return (
-    <div>
       <ChartContainer>
         <Plot data={data} layout={layout} />
       </ChartContainer>
-    </div>
+    
   );
 }

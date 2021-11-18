@@ -29,9 +29,9 @@ export default function User(props) {
        
             <h1>{campaign?.title}</h1>
             <UserCampaignImg src={campaign?.image} alt="" />
-            <h3>goal: {formatter.format(campaign?.goal)}</h3>
-            <p>description: {campaign?.description}</p>
-            <p>creator: {campaign?.creator_name}</p>
+            <h3>Goal: {formatter.format(campaign?.goal)}</h3>
+            <p>Description: {campaign?.description}</p>
+            <p>Creator: {campaign?.creator_name}</p>
             <Up_DelButton id={campaign?.campaign_id} onClick={()=>setViewUpdateForm(!viewUpdateForm)}>{viewUpdateForm ? "Update" : "Cancel" }</Up_DelButton>
             <Up_DelButton id={campaign?.campaign_id} onClick={(e) => deleteCampaign(e)}>Delete</Up_DelButton>
             <UpdateForm viewUpdateForm={viewUpdateForm} campaign={campaign}/>
