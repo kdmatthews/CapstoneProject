@@ -13,6 +13,23 @@ export const Header = styled.div`
     overflow: visible;
     border-top:double whitesmoke;
     border-bottom: double whitesmoke;
+    
+    @media only screen and (device-width: 1024px) and (device-height: 1366px) {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    aling-items: center;
+    width: 100vw;
+    height: 70px;
+    background-color:  #FFE0AE;
+    position: absolute;
+    top: 0;
+    left:28rem;
+    z-index: 2;
+    overflow: visible;
+    border-top:double whitesmoke;
+    border-bottom: double whitesmoke;
+    }
 `
 export const NavbarIcons = styled(Link)`
 

@@ -28,7 +28,12 @@ width: 40rem;
 border-radius:10px;
 /* border: double #FFE0AE; */
 /* background-color: #FFE0AE; */
-
+@media only screen and (device-width: 1024px) and (device-height: 1366px){
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+}
 `
 export const FeaturedConImg = styled.img`
 height: 16rem;

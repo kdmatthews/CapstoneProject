@@ -1,5 +1,4 @@
-import styled, { keyframes } from 'styled-components';
-import { Link } from "react-router-dom";
+import styled, { keyframes } from 'styled-components'
 import { flash } from 'react-animations';
 
 export const HomeDiv = styled.div`
@@ -9,7 +8,12 @@ justify-content: center;
 align-items:center;
 margin: 3px;
 
-`
+@media only screen and (device-width: 1024px) and (device-height: 1366px) {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }`
 
 const fadeAnimation = keyframes `${flash}`
 export const TitleDiv =styled.div`
