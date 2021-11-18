@@ -1,8 +1,8 @@
-#S.O.S.! A crowd-funding site.
+# S.O.S.! A crowd-funding site.
 
 This is a React app and was built with npx create-react-app
 
-##To run this project on local host you'll to npm i:
+## To run this project on local host you'll to npm i:
 -bcrypt
 --cors
 -dotenv
@@ -26,7 +26,7 @@ This is a React app and was built with npx create-react-app
 -redux-logger
 -styled-components
 
-##Starting the app on localhost
+## Starting the app on localhost
 
 After you've cloned this repo onto your computer: 
 
@@ -41,7 +41,7 @@ It will ask you if you want to open on the next port available, enter **y**
 
 It will then compile the site and open it in your preferred browser. 
 
-##Styling
+## Styling
 
 Brittney Rawlings did the styling on this site, and enjoyed discovering different animations to use with React. 
 
@@ -51,7 +51,7 @@ She chose a color scheme similar to GoFundMe:
 
 ![Color Palette](/readMeAssets/colorPalette.png)
 
-##Signing Up
+## Signing Up
 
 To sign up, click the sign up link at the top of the page. 
 
@@ -63,7 +63,7 @@ Enter your name, and create a username and password.
 
 Then click sign up, and you'll be redirected to the login page, hopefully you remember the credentials you made seconds ago. 
 
-##Logging In
+## Logging In
 
 If you don't remember the credentials you made seconds ago, rinse and repeat the step above. And try not to forget this time. 
 ![Log In](/readMeAssets/logIn.png)
