@@ -32,7 +32,7 @@ app.post("/login", (req, res) => {
     try {
       // you need to add a input field for the name
       const userData = await creds.query(
-        `SELECT * FROM users WHERE name = '${name}'`
+        `SELECT * FROM users WHERE username = '${username}'`
       );
       const userValidated = await bcrypt.compare(
         password,
@@ -41,7 +41,7 @@ app.post("/login", (req, res) => {
       
       if (userValidated) {
         //generate web token, first argument is payload (what you want to put inthe token so you can decode it later) and second is secret key
-        const token = jwt.sign({ name: name }, "SECRETKEY");
+        const token = jwt.sign({ username: username }, "SECRETKEY");
         res.json({ success: true, token: token });
         // res.redirect("http://localhost:3000/user");
       } else {
