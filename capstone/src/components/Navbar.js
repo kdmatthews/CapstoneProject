@@ -3,13 +3,12 @@ import { useHistory } from "react-router";
 import { navbarData, navbarUser } from "./NavbarData";
 import NavbarLinks from "./NavbarLinks";
 import { Header, LogOutButton } from "../styled-components/NavbarStyled";
-// import  from "../../public"
 import { connect } from "react-redux";
 
 function Navbar() {
   const history = useHistory();
   const checkLogIn = localStorage.getItem("jsonwebtoken");
-  console.log(checkLogIn);
+  
 
   function logOut() {
     localStorage.removeItem("jsonwebtoken");

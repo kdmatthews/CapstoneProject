@@ -38,7 +38,7 @@ app.post("/login", (req, res) => {
         password,
         userData.rows[0].password
       );
-      console.log(userValidated);
+      
       if (userValidated) {
         //generate web token, first argument is payload (what you want to put inthe token so you can decode it later) and second is secret key
         const token = jwt.sign({ name: name }, "SECRETKEY");

@@ -1,5 +1,4 @@
 import React from "react";
-
 import User from "./User";
 import {ChartDiv} from '../styled-components/AddCampaignStyled'
 import { useEffect, useState } from "react";
@@ -11,7 +10,6 @@ export default function CampaignContainer() {
 
   useEffect(() => {
     readCampaigns();
-    // return () => {};
   }, []);
 
   const readCampaigns = async () => {
