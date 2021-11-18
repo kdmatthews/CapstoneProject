@@ -17,6 +17,7 @@ export default function Home() {
         <HomeDiv>
          <FadeIn>   
         <Confetti/>
+        <Confetti/>
         </FadeIn>
       
         

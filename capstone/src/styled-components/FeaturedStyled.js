@@ -10,6 +10,15 @@ align-items: center;
 justify-content: space-evenly;
 margin-top: 2rem ;
 border-radius:10px;
+border: solid violet;
+
+@media only screen and (min-width: 1024px) and (max-height: 1366px){
+display: grid;
+grid-template-columns: repeat(1, 1fr);
+gap: 1rem;
+align-items: center;
+justify-content: space-evenly;
+}
 /* background-color: #6C8255; */
 /* width: 100rem; */
 /* border: solid black; */
@@ -22,13 +31,15 @@ display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: center;
-/* border: double #6C8255; */
 height:35rem;
 width: 40rem;
 border-radius:10px;
-/* border: double #FFE0AE; */
-/* background-color: #FFE0AE; */
+@media only screen and (min-width: 1024px) and (max-height: 1366px){
 
+    border-bottom: solid #FF4500 ;
+}
+
+    
 `
 export const FeaturedConImg = styled.img`
 height: 16rem;
