@@ -37,9 +37,13 @@ align-items: center;
 `
 
 export const ChartDiv = styled.div`
-display: grid;
-grid-template-columns: repeat(3, 0.5fr);
-/* gap: 3rem; */
+display: flex;
+flex-wrap: wrap;
+width: 90%;
+justify-content: center;
+margin: auto;
+margin-top: 50px;
+
 `
 export const AddCamButton = styled.button`
 height: 2rem;

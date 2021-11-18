@@ -48,9 +48,9 @@ function Login(props) {
         onChange={(e) =>
           setFormData({ ...formData, [e.target.name]: e.target.value })
         }
-        name="username"
+        name="name"
         type="text"
-        placeholder="Username"
+        placeholder="Name"
       />
       <Input
         onChange={(e) =>

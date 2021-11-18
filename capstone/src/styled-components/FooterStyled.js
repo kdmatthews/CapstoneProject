@@ -3,7 +3,7 @@ import styled, { keyframes } from 'styled-components';
 export const FooterDiv = styled.div`
     display: flex;
     width: 100%;
-    height: 70px;
+    height: 30px;
     background-color: #FFE0AE;
     color: #6C8255;
     position: fixed;
