@@ -1,70 +1,75 @@
-# Getting Started with Create React App
+#S.O.S.! A crowd-funding site.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a React app and was built with npx create-react-app
 
-## Available Scripts
+##To run this project on local host you'll to npm i:
+-bcrypt
+--cors
+-dotenv
+-express
+-jsonwebtoken
+-node-sass
+-nodemon
+-pg
+-pg-pool
+-plotly.js
+-react
+-react-animations
+-react-confetti
+-react-dom
+-react-fade-in
+-react-icons
+-react-plotly.js
+-react-redux
+-react-router-dom
+-redux
+-redux-logger
+-styled-components
 
-In the project directory, you can run:
+##Starting the app on localhost
 
-### `yarn start`
+After you've cloned this repo onto your computer: 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+To start the app, you'll need to cd into the serverSide folder in your IDE terminal, and enter *nodemon index.js*
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+You have to do this **FIRST** before you npm run start on your React App, so that the React App can open on the next available port. 
 
-### `yarn test`
+After you've started your server and verified it's listening on PORT 3000 (check the IDE terminal), you can open up the terminal on your computer and cd into the capstone project folder, where package.JSON lives, and enter
+*npm run start*
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+It will ask you if you want to open on the next port available, enter **y**
 
-### `yarn build`
+It will then compile the site and open it in your preferred browser. 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+##Styling
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Brittney Rawlings did the styling on this site, and enjoyed discovering different animations to use with React. 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+She chose a color scheme similar to GoFundMe:
 
-### `yarn eject`
+[Flaming Flower](https://www.canva.com/colors/color-palettes/flaming-flower/)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+![Color Palette](/readMeAssets/colorPalette.png)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+##Signing Up
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+To sign up, click the sign up link at the top of the page. 
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+![Sign Up Link](/readMeAssets/signUp.png)
 
-## Learn More
+Enter your name, and create a username and password. 
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![Sign Up](/readMeAssets/signUpSS.png)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Then click sign up, and you'll be redirected to the login page, hopefully you remember the credentials you made seconds ago. 
 
-### Code Splitting
+##Logging In
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+If you don't remember the credentials you made seconds ago, rinse and repeat the step above. And try not to forget this time. 
+![Log In](/readMeAssets/logIn.png)
 
-### Analyzing the Bundle Size
+Click Login and you'll be redirected to your new user dashboard. 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
