@@ -15,12 +15,9 @@ export default function User(props) {
             "Content-Type": "application/json",
           },  
                
-        }); 
-      
+        });       
         window.location.reload(false)
-       
-       
-      };  
+        };  
     
       let formatter = new Intl.NumberFormat('en-US', {
         style: 'currency',

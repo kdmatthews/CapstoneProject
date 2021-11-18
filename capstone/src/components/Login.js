@@ -29,7 +29,6 @@ function Login(props) {
       .then((result) => {
         if (result.success == true) {
           const token = result.token;
-          // put the token in local storage
           localStorage.setItem("jsonwebtoken", token);
           props.onLoggedIn();
           history.push("/user");
