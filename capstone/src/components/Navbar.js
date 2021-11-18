@@ -18,7 +18,7 @@ function Navbar() {
   }
 
   return (
-    <Header>
+    <Header className="header">
       {checkLogIn
         ? navbarUser?.map((linkData) => <NavbarLinks linkData={linkData} />)
         : navbarData?.map((linkData) => <NavbarLinks linkData={linkData} />)}

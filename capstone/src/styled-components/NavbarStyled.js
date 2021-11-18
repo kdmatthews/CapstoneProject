@@ -4,32 +4,34 @@ import { Link } from 'react-router-dom'
 export const Header = styled.div`
     display: flex;
     justify-content: space-evenly;
+    flex-wrap: wrap;
     width: 100%;
     height: 70px;
     background-color:  #FFE0AE;
     position: absolute;
     top: 0;
+    left: 10rem;
     z-index: 2;
     overflow: visible;
     border-top:double whitesmoke;
     border-bottom: double whitesmoke;
     
-    @media only screen and (device-width: 1024px) and (device-height: 1366px) {
+    @media only screen and (min-width: 1024px) and (max-height: 1366px) {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
     aling-items: center;
-    width: 100vw;
+    width: 100%;
     height: 70px;
     background-color:  #FFE0AE;
     position: absolute;
     top: 0;
-    left:28rem;
+    left:1rem;
     z-index: 2;
     overflow: visible;
     border-top:double whitesmoke;
     border-bottom: double whitesmoke;
-    }
+    } 
 `
 export const NavbarIcons = styled(Link)`
 
