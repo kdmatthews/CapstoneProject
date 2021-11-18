@@ -1,16 +1,22 @@
 import React from "react";
 import { FormDiv, Input, FormButton, FormContain, SocialIcons, FormTitle, HrefTag} from "../styled-components/LoginStyled";
-import { useState, useHistory } from "react";
+import { useState } from "react";
 import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
+import { Redirect, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function SignUp() {
+  let history = useHistory();
   const [formData, setFormData] = useState({
     name: "",
     username: "",
     password: "",
   });
 
+  const redirect = () => {
+    history.push('/login')
+  }
   const signUp = async (e) => {
     e.preventDefault();
 
@@ -21,8 +27,15 @@ export default function SignUp() {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(formData),
-    });
-  };
+    })
+    redirect()
+   
+
+   
+    
+  }; 
+ 
+  
 
   return (
     <FormContain>
@@ -57,7 +70,8 @@ export default function SignUp() {
         type="password"
         placeholder="password"
       />
-      <FormButton onClick={(e) => signUp(e)}>SignUp</FormButton>
+    <FormButton onClick={(e) => signUp(e)}>SignUp</FormButton>
+   
       <HrefTag href="/login">Already have an account? Login</HrefTag>
     </FormDiv>
     </FormContain>

@@ -13,8 +13,6 @@ export default function UpdateForm(props) {
     const updateCampaign = async (e) => {
         e.preventDefault();
         const id = e.target.id;
-        console.log(id);
-
         const updateCampaigns = await fetch (`http://localhost:3000/update_campaign/${id}`, {
             method: "POST",
             mode: "cors",
@@ -30,13 +28,9 @@ export default function UpdateForm(props) {
         <>
             {!viewUpdateForm ? 
             <UpdateDiv>
-            
-             {/* <input onChange={(e)=>setCampaignData({...campaignData,[e.target.name]:e.target.value})} name="creator_name"   type="text" placeholder="creator_name"/> */}
              <UpdateInput onChange={(e)=>setCampaignData({...campaignData,[e.target.name]:e.target.value})} name="image"  type="text" placeholder="image URL"/>
             <UpdateInput onChange={(e)=>setCampaignData({...campaignData,[e.target.name]:e.target.value})} name="title"  type="text" placeholder="Title"/>
-         
             <UpdateInput onChange={(e)=>setCampaignData({...campaignData,[e.target.name]:e.target.value})} name="goal" type="number" placeholder="goal" />
-           
             <UpdateText onChange={(e)=>setCampaignData({...campaignData,[e.target.name]:e.target.value})} name="description" id="" cols="30" rows="10" placeholder="description"></UpdateText> 
             <AddCamButton id={campaign?.campaign_id} onClick={(e)=>updateCampaign(e)}>Update Campaign</AddCamButton>
             </UpdateDiv>

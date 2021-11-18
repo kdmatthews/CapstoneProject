@@ -7,4 +7,4 @@ const creds = new pg.Client(
 
 module.exports = creds;
 
-// console.log(token)
+

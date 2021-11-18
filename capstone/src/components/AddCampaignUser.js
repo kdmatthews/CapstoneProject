@@ -40,7 +40,7 @@ export default function AddCampaign() {
           }
           name="creator_name"
           type="text"
-          placeholder="creator_name"
+          placeholder="Creator Name"
         />
         <CampaignInputs
           onChange={(e) =>
@@ -51,7 +51,7 @@ export default function AddCampaign() {
           }
           name="image"
           type="text"
-          placeholder="image URL"
+          placeholder="Image URL"
         />
         <CampaignInputs
           onChange={(e) =>
@@ -74,7 +74,7 @@ export default function AddCampaign() {
           }
           name="goal"
           type="number"
-          placeholder="goal"
+          placeholder="Goal"
         />
 
         <CampaignText
@@ -88,7 +88,7 @@ export default function AddCampaign() {
           id=""
           cols="30"
           rows="10"
-          placeholder="description"
+          placeholder="Description"
         ></CampaignText>
         <AddCamButton onClick={(e) => createCampaign(e)}>Add Campaign</AddCamButton>
       </NewCampaignForm >

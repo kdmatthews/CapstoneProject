@@ -38,7 +38,7 @@ app.post("/login", (req, res) => {
         password,
         userData.rows[0].password
       );
-      console.log(userValidated);
+      
       if (userValidated) {
         //generate web token, first argument is payload (what you want to put inthe token so you can decode it later) and second is secret key
         const token = jwt.sign({ name: name }, "SECRETKEY");
@@ -130,12 +130,12 @@ app.delete("/delete_campaign/:id", (req, res) => {
 app.post("/update_donations/:id", (req, res) => {
   const id = req.params.id;
 
-  console.log(id)
+  
   creds.connect(async () => {
     const data = await creds.query(
       `UPDATE campaigns SET donations = (donations + ${req.body.donations}) WHERE campaign_id = ${id}`
     ); 
-    console.log(data)
+    
     res.send(data);
   });
 });
