@@ -17,6 +17,10 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'client/build/index.html'));
 });
 
+app.get('/user', (req, res) => {
+  res.sendFile(path.join(__dirname, 'client/build/index.html'));
+});
+
 app.post("/user", authenticate, (req, res) => {});
 
 app.post("/signup", async (req, res) => {
