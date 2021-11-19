@@ -7,7 +7,6 @@ import * as AiIcons from "react-icons/ai";
 export default function Footer() {
     return (
         <FooterDiv>
-            <div></div>
             <AiIcons.AiFillFacebook />
             <AiIcons.AiOutlineGoogle/>
             <AiIcons.AiOutlineTwitter/>

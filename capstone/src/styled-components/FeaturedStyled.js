@@ -22,10 +22,6 @@ height:35rem;
 width: 350px;
 padding: 15px;
 border-radius:10px;
-@media only screen and (min-width: 1024px) and (max-height: 1366px){
-
-    border-bottom: solid #FF4500 ;
-}
 
     
 `
