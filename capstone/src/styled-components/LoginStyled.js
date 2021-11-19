@@ -6,7 +6,7 @@ display:flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
-margin: 10rem;
+margin: 20px;
 `
 const FormBounce = keyframes `${bounceInDown}`
 export const FormDiv = styled.div`
@@ -15,10 +15,9 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
-margin: 1rem;
-padding: .5rem;
+
 background-image: linear-gradient(to right,  #FFA303 ,#FF4500 );
-height: 30rem;
+height: 325px;
 width: 25rem;
 border-radius: 7px;
 `
