@@ -8,12 +8,7 @@ justify-content: center;
 align-items:center;
 margin: 3px;
 
-@media only screen and (min-width: 1024px) and (min-height: 1366px) {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-  }
+
   `
 
 const fadeAnimation = keyframes `${flash}`

@@ -9,7 +9,6 @@ export const Header = styled.div`
     height: 70px;
     background-color:  #FFE0AE;
     top: 0;
-    left: 10rem;
     z-index: 2;
     overflow: visible;
     border-top:double whitesmoke;
