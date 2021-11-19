@@ -12,7 +12,7 @@ export default function CampaignContainer() {
   }, []);
 
   const readCampaigns = async () => {
-    const readCampaigns = await fetch("http://localhost:3000/read_campaigns", {
+    const readCampaigns = await fetch("/read_campaigns", {
       method: "GET",
       mode: "cors",
       headers: {

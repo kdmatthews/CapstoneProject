@@ -15,7 +15,7 @@ export default function CampaignContainer() {
   const readCampaigns = async () => {
     const token = localStorage.getItem("jsonwebtoken");
     const readCampaigns = await fetch(
-      "http://localhost:3000/read_campaigns_by_user/:creator_name",
+      "/read_campaigns_by_user/:creator_name",
       {
         method: "GET",
         mode: "cors",

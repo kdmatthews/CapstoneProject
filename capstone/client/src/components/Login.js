@@ -17,7 +17,7 @@ function Login(props) {
 
   const logIn = async (e) => {
     e.preventDefault();
-    const loginFetch = await fetch("http://localhost:3000/login", {
+    const loginFetch = await fetch("/login", {
       method: "POST",
       mode: "cors",
       headers: {

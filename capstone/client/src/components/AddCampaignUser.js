@@ -15,7 +15,7 @@ export default function AddCampaign() {
     e.preventDefault();
 
     const createCampaign = await fetch(
-      "http://localhost:3000/create_campaign",
+      "/create_campaign",
       {
         method: "POST",
         mode: "cors",
