@@ -3,25 +3,12 @@ import {bounce, fadeInLeft, lightSpeedIn} from 'react-animations'
 
 
 export const FeaturedContain = styled.div`
-display: grid;
-grid-template-columns: repeat(3, 1fr);
-gap: 1rem;
-align-items: center;
-justify-content: space-evenly;
-margin-top: 2rem ;
-border-radius:10px;
-border: solid violet;
 
-@media only screen and (min-width: 1024px) and (max-height: 1366px){
-display: grid;
-grid-template-columns: repeat(1, 1fr);
-gap: 1rem;
-align-items: center;
-justify-content: space-evenly;
-}
-/* background-color: #6C8255; */
-/* width: 100rem; */
-/* border: solid black; */
+display: flex;
+width: 100%;
+align-items: baseline;
+flex-wrap: wrap;
+justify-content: center;
 
 `
 const Animation = keyframes`${fadeInLeft}`
@@ -32,7 +19,8 @@ flex-direction: column;
 align-items: center;
 justify-content: center;
 height:35rem;
-width: 40rem;
+width: 350px;
+padding: 15px;
 border-radius:10px;
 @media only screen and (min-width: 1024px) and (max-height: 1366px){
 

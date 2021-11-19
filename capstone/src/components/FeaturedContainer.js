@@ -9,7 +9,7 @@ export default function FeaturedContainer() {
         <FeaturedContain>
             {featuredInfo?.map((item)=> (
                 <FeaturedInfo item={item} />
-            ))};
+            ))}
         </FeaturedContain>
     )
 }

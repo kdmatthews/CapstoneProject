@@ -2,20 +2,14 @@ import styled, { keyframes } from 'styled-components';
 import {  lightSpeedIn, bounceInRight} from 'react-animations';
 
 export const CampCon = styled.div`
-display: grid;
-grid-template-columns: repeat(3, 1fr);
-gap: 8rem;
-margin: 10rem;
+border-radius: 25px;
+display: flex;
+flex-wrap: wrap;
+margin-bottom: 35px;
 background-image: linear-gradient(to right,  #FFA303 ,#FF4500 );
-padding: 10rem;
-border-radius: 10cm;
+align-items: baseline;
+justify-content: center;
 
-@media only screen and (min-device-width: 1024px) and (min-device-height: 1366px){
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 8rem;
-    margin: 10rem;
-}
 `
 export const CampaignsDiv = styled.div`
 display: flex;
@@ -23,6 +17,7 @@ flex-direction:column;
 justify-content: center;
 height: 30rem;
 width: 20rem;
+padding: 35px;
 /* background-color: #FF4500 ; */
 `
 
