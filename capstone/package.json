@@ -1,63 +1,23 @@
 {
-  "name": "capstone",
-  "version": "0.1.0",
-  "private": true,
+  "name": "serverside",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "heroku-postbuild": "cd client && npm install && npm run build"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
   "dependencies": {
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
     "bcrypt": "^5.0.1",
+    "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
-    "node-sass": "^6.0.1",
-    "nodemon": "^2.0.14",
-    "pg": "^8.7.1",
-    "pg-pool": "^3.4.1",
-    "plotly.js": "^2.6.3",
-    "react": "^17.0.2",
-    "react-animations": "^1.0.0",
-    "react-confetti": "^6.0.1",
-    "react-dom": "^17.0.2",
-    "react-fade-in": "^2.0.1",
-    "react-icons": "^4.3.1",
-    "react-plotly.js": "^2.5.1",
-    "react-redux": "^7.2.6",
-    "react-router-dom": "^5.3.0",
-    "react-scripts": "4.0.3",
-    "redux": "^4.1.2",
-    "redux-logger": "^3.0.6",
-    "styled-components": "^5.3.3",
-    "web-vitals": "^1.0.1"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
-  "main": "index.js",
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+    "knex": "^0.95.13",
+    "pg": "^8.7.1"
+  }
 }
