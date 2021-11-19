@@ -7,12 +7,12 @@ export const Header = styled.div`
     width: 100%;
     height: 70px;
     background-color:  #FFE0AE;
-    position: absolute;
     top: 0;
     z-index: 2;
     overflow: visible;
     border-top:double whitesmoke;
     border-bottom: double whitesmoke;
+    align-items: center;
 `
 export const NavbarIcons = styled(Link)`
 

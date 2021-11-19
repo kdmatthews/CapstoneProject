@@ -19,11 +19,12 @@ flex-direction: row;
 justify-content: center;
 color: #FF4500 ;
 gap:1rem;
-margin-top:5rem;
+margin-top: 90px;
 `
 export const Logo_Img = styled.img`
-height: 20rem;
-width: 20rem;
+height: auto;
+width: 29%;
+max-width: 350px;
 border-radius: 5px;
  `
 
