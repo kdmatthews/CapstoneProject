@@ -9,6 +9,7 @@ margin-bottom: 35px;
 background-image: linear-gradient(to right,  #FFA303 ,#FF4500 );
 align-items: baseline;
 justify-content: center;
+
 `
 export const CampaignsDiv = styled.div`
 display: flex;
