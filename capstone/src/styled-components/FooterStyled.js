@@ -7,7 +7,7 @@ export const FooterDiv = styled.div`
     background-color: #FFE0AE;
     color: #6C8255;
     position: absolute;
-    /* bottom: 0; */
+   
     z-index: 10;
     overflow: visible;
     border-top:double whitesmoke;
