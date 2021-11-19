@@ -4,15 +4,20 @@ import { Link } from 'react-router-dom'
 export const Header = styled.div`
     display: flex;
     justify-content: space-evenly;
+    flex-wrap: wrap;
     width: 100%;
     height: 70px;
     background-color:  #FFE0AE;
     top: 0;
+    left: 10rem;
     z-index: 2;
     overflow: visible;
     border-top:double whitesmoke;
     border-bottom: double whitesmoke;
+
     align-items: center;
+
+
 `
 export const NavbarIcons = styled(Link)`
 
