@@ -13,7 +13,7 @@ export default function UpdateForm(props) {
     const updateCampaign = async (e) => {
         e.preventDefault();
         const id = e.target.id;
-        const updateCampaigns = await fetch (`http://localhost:3000/update_campaign/${id}`, {
+        const updateCampaigns = await fetch (`/update_campaign/${id}`, {
             method: "POST",
             mode: "cors",
             headers: {

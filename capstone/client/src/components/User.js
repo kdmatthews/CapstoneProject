@@ -8,7 +8,7 @@ export default function User(props) {
     
     const deleteCampaign = async (e) => {
      const id = e.target.id
-        const deleteCampaigns = await fetch(`http://localhost:3000/delete_campaign/${id}`, {
+        const deleteCampaigns = await fetch(`/delete_campaign/${id}`, {
           method: "DELETE",
           mode: "cors",
           headers: {

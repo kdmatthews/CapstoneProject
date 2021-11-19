@@ -20,7 +20,7 @@ export default function SignUp() {
   const signUp = async (e) => {
     e.preventDefault();
 
-    const signUp = await fetch("http://localhost:3000/signup", {
+    const signUp = await fetch("/signup", {
       method: "POST",
       mode: "cors",
       headers: {
